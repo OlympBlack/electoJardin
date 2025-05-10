@@ -32,7 +32,7 @@
                                 <li><i class="ti-power-off"></i> <a href="{{route('user.logout')}}">Logout</a></li>
 
                             @else
-                                <li><i class="ti-power-off"></i><a href="{{route('login.form')}}">Login /</a> <a href="{{route('register.form')}}">Register</a></li>
+                                <li><i class="ti-power-off"></i><a href="{{route('login.form')}}">Se connecter /</a> <a href="{{route('register.form')}}">S'inscrire</a></li>
                             @endauth
                         </ul>
                     </div>
@@ -60,7 +60,7 @@
                         <!-- Search Form -->
                         <div class="search-top">
                             <form class="search-form">
-                                <input type="text" placeholder="Search here..." name="search">
+                                <input type="text" placeholder="Rechercher un produit ici..." name="search">
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
@@ -72,15 +72,15 @@
                 <div class="col-lg-8 col-md-7 col-12">
                     <div class="search-bar-top">
                         <div class="search-bar">
-                            <select>
+                            <!--<select>
                                 <option >All Category</option>
                                 @foreach(Helper::getAllCategory() as $cat)
                                     <option>{{$cat->title}}</option>
                                 @endforeach
-                            </select>
+                            </select>-->
                             <form method="POST" action="{{route('product.search')}}">
                                 @csrf
-                                <input name="search" placeholder="Search Products Here....." type="search">
+                                <input name="search" placeholder="Rechercher un produit ici..." type="search">
                                 <button class="btnn" type="submit"><i class="ti-search"></i></button>
                             </form>
                         </div>
@@ -189,13 +189,12 @@
                                 <div class="navbar-collapse">	
                                     <div class="nav-inner">	
                                         <ul class="nav main-menu menu navbar-nav">
-                                            <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Home</a></li>
-                                            <li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">About Us</a></li>
-                                            <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Products</a><span class="new">New</span></li>												
+                                            <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Acceuil</a></li>
+                                            <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Produits</a><span class="new">Nouveauté</span></li>												
                                                 {{Helper::getHeaderCategory()}}
                                             <li class="{{Request::path()=='blog' ? 'active' : ''}}"><a href="{{route('blog')}}">Blog</a></li>									
-                                               
-                                            <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact Us</a></li>
+                                            <li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">Qui sommes-nous</a></li>
+                                            <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact</a></li>
                                         </ul>
                                     </div>
                                 </div>
