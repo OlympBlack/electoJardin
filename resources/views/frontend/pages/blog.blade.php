@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || Blog Page')
+@section('title','ElectroJardin')
 
 @section('main-content')
     <!-- Breadcrumbs -->
@@ -10,8 +10,8 @@
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="{{route('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="javascript:void(0);">Blog Grid Sidebar</a></li>
+                            <li><a href="{{route('home')}}">Acceuil<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="javascript:void(0);">Blog en grille + sidebar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,14 +59,14 @@
                         <!-- Single Widget -->
                         <div class="single-widget search">
                             <form class="form" method="GET" action="{{route('blog.search')}}">
-                                <input type="text" placeholder="Search Here..." name="search">
+                                <input type="text" placeholder="Rechercher ici..." name="search">
                                 <button class="button" type="sumbit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
                         <div class="single-widget category">
-                            <h3 class="title">Blog Categories</h3>
+                            <h3 class="title">Catégories d’articles</h3>
                             <ul class="categor-list">
                                 @if(!empty($_GET['category']))
                                     @php
@@ -88,7 +88,7 @@
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
                         <div class="single-widget recent-post">
-                            <h3 class="title">Recent post</h3>
+                            <h3 class="title">Article récent</h3>
                             @foreach($recent_posts as $post)
                                 <!-- Single Post -->
                                 <div class="single-post">
@@ -113,7 +113,7 @@
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
                         <div class="single-widget side-tags">
-                            <h3 class="title">Tags</h3>
+                            <h3 class="title">Étiquettes</h3>
                             <ul class="tag">
                                 @if(!empty($_GET['tag']))
                                     @php
@@ -134,17 +134,17 @@
                         </div>
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
-                        <div class="single-widget newsletter">
+                        <!--<div class="single-widget newsletter">
                             <h3 class="title">Newslatter</h3>
                             <div class="letter-inner">
-                                <h4>Subscribe & get news <br> latest updates.</h4>
+                                <h4>Abonnez-vous et obtenez <br> les dernières mises à jour.</h4>
                                 <form method="POST" action="{{route('subscribe')}}" class="form-inner">
                                     @csrf
                                     <input type="email" name="email" placeholder="Enter your email">
                                     <button type="submit" class="btn " style="width: 100%">Submit</button>
                                 </form>
                             </div>
-                        </div>
+                        </div>-->
                         <!--/ End Single Widget -->
                     </div>
                 </div>

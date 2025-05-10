@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Wishlist Page')
+@section('title','ElectroJardin')
 @section('main-content')
 	<!-- Breadcrumbs -->
 	<div class="breadcrumbs">
@@ -8,8 +8,8 @@
 				<div class="col-12">
 					<div class="bread-inner">
 						<ul class="bread-list">
-							<li><a href="{{('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-							<li class="active"><a href="javascript:void(0);">Wishlist</a></li>
+							<li><a href="{{('home')}}">Acceuil<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="javascript:void(0);">Fovoris</a></li>
 						</ul>
 					</div>
 				</div>
@@ -27,10 +27,10 @@
 					<table class="table shopping-summery">
 						<thead>
 							<tr class="main-hading">
-								<th>PRODUCT</th>
-								<th>NAME</th>
+								<th>PRODUIT</th>
+								<th>NOM</th>
 								<th class="text-center">TOTAL</th> 
-								<th class="text-center">ADD TO CART</th> 
+								<th class="text-center">AJOUTER AU PANIER</th> 
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
 							</tr>
 						</thead>
@@ -54,7 +54,7 @@
 							@else 
 								<tr>
 									<td class="text-center">
-										There are no any wishlist available. <a href="{{route('product-grids')}}" style="color:blue;">Continue shopping</a>
+										Aucune liste de favoris disponible. <a href="{{route('product-grids')}}" style="color:blue;">Continue shopping</a>
 
 									</td>
 								</tr>
@@ -70,52 +70,51 @@
 	</div>
 	<!--/ End Shopping Cart -->
 			
-	<!-- Start Shop Services Area  -->
+	<!-- Start Shop Services Area 
 	<section class="shop-services section">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+				<div class="col-lg-3 col-md-6 col-12"> -->
+					<!-- Start Single Service
 					<div class="single-service">
 						<i class="ti-rocket"></i>
 						<h4>Free shiping</h4>
 						<p>Orders over $100</p>
-					</div>
-					<!-- End Single Service -->
+					</div> -->
+					<!-- End Single Service 
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+				<div class="col-lg-3 col-md-6 col-12">-->
+					<!-- Start Single Service 
 					<div class="single-service">
 						<i class="ti-reload"></i>
 						<h4>Free Return</h4>
 						<p>Within 30 days returns</p>
-					</div>
-					<!-- End Single Service -->
+					</div>-->
+					<!-- End Single Service
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+				<div class="col-lg-3 col-md-6 col-12"> -->
+					<!-- Start Single Service
 					<div class="single-service">
 						<i class="ti-lock"></i>
 						<h4>Sucure Payment</h4>
-						<p>100% secure payment</p>
+						<p>100% secure payment</p> -->
 					</div>
-					<!-- End Single Service -->
+					<!-- End Single Service 
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+				<div class="col-lg-3 col-md-6 col-12">-->
+					<!-- Start Single Service 
 					<div class="single-service">
 						<i class="ti-tag"></i>
 						<h4>Best Peice</h4>
 						<p>Guaranteed price</p>
-					</div>
-					<!-- End Single Service -->
+					</div>-->
+					<!-- End Single Service 
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
 	<!-- End Shop Newsletter -->
 	
-	@include('frontend.layouts.newsletter')
 	
 	
 	
