@@ -41,45 +41,51 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'title' => 'required|string',
-            'summary' => 'required|string',
-            'description' => 'nullable|string',
-            'photo' => 'required|string',
-            'size' => 'nullable',
-            'stock' => 'required|numeric',
-            'cat_id' => 'required|exists:categories,id',
-            'brand_id' => 'nullable|exists:brands,id',
-            'child_cat_id' => 'nullable|exists:categories,id',
-            'is_featured' => 'sometimes|in:1',
-            'status' => 'required|in:active,inactive',
-            'condition' => 'required|in:default,new,hot',
-            'price' => 'required|numeric',
-            'discount' => 'nullable|numeric',
-        ]);
+{
+    $validatedData = $request->validate([
+        'title' => 'required|string',
+        'summary' => 'required|string',
+        'description' => 'nullable|string',
+        'photo' => 'required|string',
+        'size' => 'nullable',
+        'stock' => 'required|numeric',
+        'cat_id' => 'required|exists:categories,id',
+        'brand_id' => 'nullable|exists:brands,id',
+        'child_cat_id' => 'nullable|exists:categories,id',
+        'is_featured' => 'sometimes|in:1',
+        'status' => 'required|in:active,inactive',
+        'condition' => 'required|in:default,new,hot',
+        'price' => 'required|numeric',
+        'discount' => 'nullable|numeric',
+    ]);
 
-        $slug = generateUniqueSlug($request->title, Product::class);
-        $validatedData['slug'] = $slug;
-        $validatedData['is_featured'] = $request->input('is_featured', 0);
 
-        if ($request->has('size')) {
-            $validatedData['size'] = implode(',', $request->input('size'));
-        } else {
-            $validatedData['size'] = '';
-        }
+    
+    
+    $validatedData['brand_id'] = $validatedData['brand_id'] ?? 1; // Remplace 1 par l’ID réel de la marque par défaut
 
-        $product = Product::create($validatedData);
+    $slug = generateUniqueSlug($request->title, Product::class);
+    $validatedData['slug'] = $slug;
+    $validatedData['is_featured'] = $request->input('is_featured', 0);
 
-        $message = $product
-            ? 'Product Successfully added'
-            : 'Please try again!!';
-
-        return redirect()->route('product.index')->with(
-            $product ? 'success' : 'error',
-            $message
-        );
+    if ($request->has('size')) {
+        $validatedData['size'] = implode(',', $request->input('size'));
+    } else {
+        $validatedData['size'] = '';
     }
+
+    $product = Product::create($validatedData);
+
+    $message = $product
+        ? 'Product Successfully added'
+        : 'Please try again!!';
+
+    return redirect()->route('product.index')->with(
+        $product ? 'success' : 'error',
+        $message
+    );
+}
+
 
     /**
      * Display the specified resource.

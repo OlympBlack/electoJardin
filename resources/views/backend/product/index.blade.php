@@ -9,7 +9,7 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Product Lists</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste de produits</h6>
       <a href="{{route('product.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Product</a>
     </div>
     <div class="card-body">
@@ -18,35 +18,35 @@
         <table class="table table-bordered" id="product-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Is Featured</th>
-              <th>Price</th>
-              <th>Discount</th>
-              <th>Size</th>
+              <th>Identifiant</th>
+              <th>Titre</th>
+              <th>Catégorie</th>
+              <th>Est facturé</th>
+              <th>Prix</th>
+              <th>Reduction</th>
+              <!--<th>Taille</th>-->
               <th>Condition</th>
-              <th>Brand</th>
+              <th>Marque</th>
               <th>Stock</th>
               <th>Photo</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Is Featured</th>
-              <th>Price</th>
-              <th>Discount</th>
-              <th>Size</th>
+              <th>Identifiant</th>
+              <th>Titre</th>
+              <th>Catégorie</th>
+              <th>Est facturé</th>
+              <th>Prix</th>
+              <th>Reduction</th>
+              <!--<th>Taille</th>-->
               <th>Condition</th>
-              <th>Brand</th>
+              <th>Marque</th>
               <th>Stock</th>
               <th>Photo</th>
-              <th>Status</th>
+              <th>Statut</th>
               <th>Action</th>
             </tr>
           </tfoot>
@@ -71,7 +71,7 @@
                     <td>  {{$product->discount}}% OFF</td>
                     <td>{{$product->size}}</td>
                     <td>{{$product->condition}}</td>
-                    <td> {{ucfirst($product->brand->title)}}</td>
+                    <td>{{ $product->brand ? ucfirst($product->brand->title) : 'Aucune marque' }}</td>
                     <td>
                       @if($product->stock>0)
                       <span class="badge badge-primary">{{$product->stock}}</span>

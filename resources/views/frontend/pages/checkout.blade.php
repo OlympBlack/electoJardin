@@ -11,8 +11,8 @@
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="{{route('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="javascript:void(0)">Checkout</a></li>
+                            <li><a href="{{route('home')}}">Acceuil<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="javascript:void(0)">Caisse</a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,13 +30,13 @@
 
                         <div class="col-lg-8 col-12">
                             <div class="checkout-form">
-                                <h2>Make Your Checkout Here</h2>
-                                <p>Please register in order to checkout more quickly</p>
+                                <h2>Faites votre paiement ic</h2>
+                                <p>Veuillez vous incrire afin de passer à la caisse plus rapidement</p>
                                 <!-- Form -->
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>First Name<span>*</span></label>
+                                            <label>Prénom<span>*</span></label>
                                             <input type="text" name="first_name" placeholder="" value="{{old('first_name')}}" value="{{old('first_name')}}">
                                             @error('first_name')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Last Name<span>*</span></label>
+                                            <label>NOM<span>*</span></label>
                                             <input type="text" name="last_name" placeholder="" value="{{old('lat_name')}}">
                                             @error('last_name')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Email Address<span>*</span></label>
+                                            <label>Mail<span>*</span></label>
                                             <input type="email" name="email" placeholder="" value="{{old('email')}}">
                                             @error('email')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Phone Number <span>*</span></label>
+                                            <label>Téléphone <span>*</span></label>
                                             <input type="number" name="phone" placeholder="" required value="{{old('phone')}}">
                                             @error('phone')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Country<span>*</span></label>
+                                            <label>Pays<span>*</span></label>
                                             <select name="country" id="country">
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AX">Åland Islands</option>
@@ -342,7 +342,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Postal Code</label>
+                                            <label> Code Postal</label>
                                             <input type="text" name="post_code" placeholder="" value="{{old('post_code')}}">
                                             @error('post_code')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -420,7 +420,7 @@
                                 <div class="single-widget get-button">
                                     <div class="content">
                                         <div class="button">
-                                            <button type="submit" class="btn">proceed to checkout</button>
+                                            <button type="submit" class="btn">Passer à la caisse</button>
                                         </div>
                                     </div>
                                 </div>
@@ -433,58 +433,58 @@
     </section>
     <!--/ End Checkout -->
     
-    <!-- Start Shop Services Area  -->
+    <!-- Start Shop Services Area 
     <section class="shop-services section home">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
+                    <!-- Start Single Service 
                     <div class="single-service">
                         <i class="ti-rocket"></i>
                         <h4>Free shiping</h4>
                         <p>Orders over $100</p>
                     </div>
-                    <!-- End Single Service -->
+                    <!-- End Single Service
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
+                    <!-- Start Single Service 
                     <div class="single-service">
                         <i class="ti-reload"></i>
                         <h4>Free Return</h4>
                         <p>Within 30 days returns</p>
                     </div>
-                    <!-- End Single Service -->
+                    <!-- End Single Service 
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
+                    <!-- Start Single Service 
                     <div class="single-service">
                         <i class="ti-lock"></i>
                         <h4>Sucure Payment</h4>
                         <p>100% secure payment</p>
                     </div>
-                    <!-- End Single Service -->
+                    <!-- End Single Service 
                 </div>
                 <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
+                    <!-- Start Single Service 
                     <div class="single-service">
                         <i class="ti-tag"></i>
                         <h4>Best Peice</h4>
                         <p>Guaranteed price</p>
                     </div>
-                    <!-- End Single Service -->
+                    <!-- End Single Service
                 </div>
             </div>
         </div>
     </section>
     <!-- End Shop Services -->
     
-    <!-- Start Shop Newsletter  -->
+    <!-- Start Shop Newsletter 
     <section class="shop-newsletter section">
         <div class="container">
             <div class="inner-top">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12">
-                        <!-- Start Newsletter Inner -->
+                        <!-- Start Newsletter Inner 
                         <div class="inner">
                             <h4>Newsletter</h4>
                             <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
@@ -493,8 +493,7 @@
                                 <button class="btn">Subscribe</button>
                             </form>
                         </div>
-                        <!-- End Newsletter Inner -->
-                    </div>
+                        <!-- End Newsletter Inner  
                 </div>
             </div>
         </div>

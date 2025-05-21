@@ -196,7 +196,7 @@
 <!-- End Midium Banner -->
 
 <!-- Start Most Popular -->
-<div class="product-area most-popular section">
+<!<div class="product-area most-popular section">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -303,7 +303,7 @@
 </section>
 <!-- End Shop Home List  -->
 
-<!-- Start Shop Blog  -->
+<!-- Start Shop Blog  
 <section class="shop-blog section">
     <div class="container">
         <div class="row">
@@ -317,7 +317,7 @@
             @if($posts)
                 @foreach($posts as $post)
                     <div class="col-lg-4 col-md-6 col-12">
-                        <!-- Start Single Blog  -->
+                        <!-- Start Single Blog  
                         <div class="shop-single-blog">
                             <img src="{{$post->photo}}" alt="{{$post->photo}}">
                             <div class="content">
@@ -326,14 +326,14 @@
                                 <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continue Reading</a>
                             </div>
                         </div>
-                        <!-- End Single Blog  -->
+                        <!-- End Single Blog  
                     </div>
                 @endforeach
             @endif
 
         </div>
     </div>
-</section>
+</section>-->
 <!-- End Shop Blog  -->
 
 <!-- Start Shop Services Area -->
@@ -381,7 +381,6 @@
 </section>
 <!-- End Shop Services Area -->
 
-@include('frontend.layouts.newsletter')
 
 <!-- Modal -->
 @if($product_lists)
@@ -512,6 +511,7 @@
                         </div>
                     </div>
                 </div>
+               
         </div>
     @endforeach
 @endif

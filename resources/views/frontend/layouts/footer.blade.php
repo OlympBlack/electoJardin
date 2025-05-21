@@ -24,11 +24,11 @@
 						<div class="single-footer links">
 							<h4>Information</h4>
 							<ul>
-								<li><a href="{{route('about-us')}}">About Us</a></li>
-								<li><a href="#">Faq</a></li>
+								<!--<li><a href="{{route('about-us')}}">About Us</a></li>
+								<li><a href="#">Faq</a></li>-->
 								<li><a href="#">Terms & Conditions</a></li>
-								<li><a href="{{route('contact')}}">Contact Us</a></li>
-								<li><a href="#">Help</a></li>
+								<li><a href="{{route('contact')}}">Contact</a></li>
+								<li><a href="#">Aide</a></li>
 							</ul>
 						</div>
 						<!-- End Single Widget -->
@@ -36,9 +36,9 @@
 					<div class="col-lg-2 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer links">
-							<h4>Customer Service</h4>
+							<h4>Service Client</h4>
 							<ul>
-								<li><a href="#">Payment Methods</a></li>
+								<li><a href="#">Méthode de paiement</a></li>
 								<li><a href="#">Money-back</a></li>
 								<li><a href="#">Returns</a></li>
 								<li><a href="#">Shipping</a></li>
@@ -74,7 +74,7 @@
 					<div class="row">
 						<div class="col-lg-6 col-12">
 							<div class="left">
-								<p>Copyright © {{date('Y')}} <a href="https://github.com/Prajwal100" target="_blank">Prajwal Rai</a>  -  All Rights Reserved.</p>
+								<p>Copyright © {{date('Y')}} - ElectroJardin</p>
 							</div>
 						</div>
 						<div class="col-lg-6 col-12">
