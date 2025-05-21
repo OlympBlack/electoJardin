@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','E-SHOP || Page des Marques')
+@section('title','ElectroJardin || Marques')
 @section('main-content')
 
 <!-- Exemple DataTables -->

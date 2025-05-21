@@ -1,16 +1,16 @@
 @extends('backend.layouts.master')
 
 @section('main-content')
- <!-- DataTales Example -->
+ <!-- Exemple de DataTables -->
  <div class="card shadow mb-4">
      <div class="row">
          <div class="col-md-12">
-            @include('backend.layouts.notification')
+            @include('backend.layouts.notification') {{-- Inclusion des notifications --}}
          </div>
      </div>
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary float-left">Liste de produits</h6>
-      <a href="{{route('product.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Product</a>
+      <a href="{{route('product.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter un produit"><i class="fas fa-plus"></i> Ajouter un produit</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -23,7 +23,7 @@
               <th>Catégorie</th>
               <th>Est facturé</th>
               <th>Prix</th>
-              <th>Reduction</th>
+              <th>Réduction</th>
               <!--<th>Taille</th>-->
               <th>Condition</th>
               <th>Marque</th>
@@ -40,7 +40,7 @@
               <th>Catégorie</th>
               <th>Est facturé</th>
               <th>Prix</th>
-              <th>Reduction</th>
+              <th>Réduction</th>
               <!--<th>Taille</th>-->
               <th>Condition</th>
               <th>Marque</th>
@@ -55,7 +55,6 @@
             @foreach($products as $product)
               @php
               $sub_cat_info=DB::table('categories')->select('title')->where('id',$product->child_cat_id)->get();
-              // dd($sub_cat_info);
               $brands=DB::table('brands')->select('title')->where('id',$product->brand_id)->get();
               @endphp
                 <tr>
@@ -66,9 +65,9 @@
                           {{$product->sub_cat_info->title ?? ''}}
                       </sub>
                     </td>
-                    <td>{{(($product->is_featured==1)? 'Yes': 'No')}}</td>
+                    <td>{{(($product->is_featured==1)? 'Oui': 'Non')}}</td>
                     <td>Rs. {{$product->price}} /-</td>
-                    <td>  {{$product->discount}}% OFF</td>
+                    <td>{{$product->discount}}% OFF</td>
                     <td>{{$product->size}}</td>
                     <td>{{$product->condition}}</td>
                     <td>{{ $product->brand ? ucfirst($product->brand->title) : 'Aucune marque' }}</td>
@@ -83,7 +82,6 @@
                         @if($product->photo)
                             @php
                               $photo=explode(',',$product->photo);
-                              // dd($photo);
                             @endphp
                             <img src="{{$photo[0]}}" class="img-fluid zoom" style="max-width:80px" alt="{{$product->photo}}">
                         @else
@@ -98,11 +96,11 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('product.edit',$product->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('product.edit',$product->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Modifier" data-placement="bottom"><i class="fas fa-edit"></i></a>
                     <form method="POST" action="{{route('product.destroy',[$product->id])}}">
                       @csrf
                       @method('delete')
-                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$product->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$product->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -111,7 +109,7 @@
         </table>
         <span style="float:right">{{$products->links()}}</span>
         @else
-          <h6 class="text-center">No Products found!!! Please create Product</h6>
+          <h6 class="text-center">Aucun produit trouvé !!! Veuillez créer un produit</h6>
         @endif
       </div>
     </div>
@@ -137,30 +135,29 @@
 
 @push('scripts')
 
-  <!-- Page level plugins -->
+  <!-- Plugins spécifiques à la page -->
   <script src="{{asset('backend/vendor/datatables/jquery.dataTables.min.js')}}"></script>
   <script src="{{asset('backend/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
-  <!-- Page level custom scripts -->
+  <!-- Scripts personnalisés pour cette page -->
   <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
   <script>
+      $('#product-dataTable').DataTable({
+        "scrollX": false,
+        "columnDefs": [
+            {
+                "orderable": false,
+                "targets": [10, 11, 12]
+            }
+        ]
+      });
 
-      $('#product-dataTable').DataTable( {
-        "scrollX": false
-            "columnDefs":[
-                {
-                    "orderable":false,
-                    "targets":[10,11,12]
-                }
-            ]
-        } );
+      // Alerte SweetAlert pour la suppression
 
-        // Sweet alert
-
-        function deleteData(id){
-
-        }
+      function deleteData(id){
+        // Fonction vide pour l'instant
+      }
   </script>
   <script>
       $(document).ready(function(){
@@ -171,12 +168,11 @@
         });
           $('.dltBtn').click(function(e){
             var form=$(this).closest('form');
-              var dataID=$(this).data('id');
-              // alert(dataID);
-              e.preventDefault();
-              swal({
-                    title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this data!",
+            var dataID=$(this).data('id');
+            e.preventDefault();
+            swal({
+                    title: "Êtes-vous sûr ?",
+                    text: "Une fois supprimé, vous ne pourrez pas récupérer ces données !",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -185,7 +181,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité !");
                     }
                 });
           })
