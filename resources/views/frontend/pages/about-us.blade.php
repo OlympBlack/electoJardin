@@ -1,27 +1,27 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || About Us')
+@section('title','E-SHOP || À propos de nous')
 
 @section('main-content')
 
-	<!-- Breadcrumbs -->
+	<!-- Fil d’Ariane -->
 	<div class="breadcrumbs">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<div class="bread-inner">
 						<ul class="bread-list">
-							<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-							<li class="active"><a href="blog-single.html">About Us</a></li>
+							<li><a href="index1.html">Accueil<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="blog-single.html">À propos de nous</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Breadcrumbs -->
+	<!-- Fin Fil d’Ariane -->
 
-	<!-- About Us -->
+	<!-- À propos de nous -->
 	<section class="about-us section">
 			<div class="container">
 				<div class="row">
@@ -30,11 +30,11 @@
 							@php
 								$settings=DB::table('settings')->get();
 							@endphp
-							<h3>Welcome To <span>Eshop</span></h3>
+							<h3>Bienvenue chez <span>Eshop</span></h3>
 							<p>@foreach($settings as $data) {{$data->description}} @endforeach</p>
 							<div class="button">
-								<a href="{{route('blog')}}" class="btn">Our Blog</a>
-								<a href="{{route('contact')}}" class="btn primary">Contact Us</a>
+								<a href="{{route('blog')}}" class="btn">Notre blog</a>
+								<a href="{{route('contact')}}" class="btn primary">Contactez-nous</a>
 							</div>
 						</div>
 					</div>
@@ -49,53 +49,53 @@
 				</div>
 			</div>
 	</section>
-	<!-- End About Us -->
+	<!-- Fin À propos de nous -->
 
 
-	<!-- Start Shop Services Area -->
+	<!-- Début section services boutique -->
 	<section class="shop-services section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Service unique -->
 					<div class="single-service">
 						<i class="ti-rocket"></i>
-						<h4>Free shiping</h4>
-						<p>Orders over $100</p>
+						<h4>Livraison gratuite</h4>
+						<p>Commandes supérieures à 100$</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin service unique -->
 				</div>
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Service unique -->
 					<div class="single-service">
 						<i class="ti-reload"></i>
-						<h4>Free Return</h4>
-						<p>Within 30 days returns</p>
+						<h4>Retour gratuit</h4>
+						<p>Retours sous 30 jours</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin service unique -->
 				</div>
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Service unique -->
 					<div class="single-service">
 						<i class="ti-lock"></i>
-						<h4>Sucure Payment</h4>
-						<p>100% secure payment</p>
+						<h4>Paiement sécurisé</h4>
+						<p>Paiement 100% sécurisé</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin service unique -->
 				</div>
 				<div class="col-lg-3 col-md-6 col-12">
-					<!-- Start Single Service -->
+					<!-- Service unique -->
 					<div class="single-service">
 						<i class="ti-tag"></i>
-						<h4>Best Peice</h4>
-						<p>Guaranteed price</p>
+						<h4>Meilleur prix</h4>
+						<p>Prix garanti</p>
 					</div>
-					<!-- End Single Service -->
+					<!-- Fin service unique -->
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- End Shop Services Area -->
+	<!-- Fin section services boutique -->
 
 	@include('frontend.layouts.newsletter')
 @endsection

@@ -1,14 +1,14 @@
 @extends('frontend.layouts.master')
 
 @section('main-content')
-	<!-- Breadcrumbs -->
+	<!-- Fil d'Ariane -->
 	<div class="breadcrumbs">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<div class="bread-inner">
 						<ul class="bread-list">
-							<li><a href="{{route('home')}}">Home<i class="ti-arrow-right"></i></a></li>
+							<li><a href="{{route('home')}}">Accueil<i class="ti-arrow-right"></i></a></li>
 							<li class="active"><a href="javascript:void(0);">Contact</a></li>
 						</ul>
 					</div>
@@ -16,9 +16,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- End Breadcrumbs -->
+	<!-- Fin Fil d'Ariane -->
   
-	<!-- Start Contact -->
+	<!-- Début Contact -->
 	<section id="contact-us" class="contact-us section">
 		<div class="container">
 				<div class="contact-head">
@@ -29,8 +29,8 @@
 									@php
 										$settings=DB::table('settings')->get();
 									@endphp
-									<h4>Prenez contact</h4>
-									<h3>Laisser nous un message @auth @else<span style="font-size:12px;" class="text-danger">[Vous devrez-vous connecter d'abord]</span>@endauth</h3>
+									<h4>Contactez-nous</h4>
+									<h3>Laissez-nous un message @auth @else<span style="font-size:12px;" class="text-danger">[Vous devez vous connecter d'abord]</span>@endauth</h3>
 								</div>
 								<form class="form-contact form contact_form" method="post" action="{{route('contact.store')}}" id="contactForm" novalidate="novalidate">
 									@csrf
@@ -78,21 +78,21 @@
 							<div class="single-head">
 								<div class="single-info">
 									<i class="fa fa-phone"></i>
-									<h4 class="title">Appeler nous sur:</h4>
+									<h4 class="title">Appelez-nous au :</h4>
 									<ul>
 										<li>@foreach($settings as $data) {{$data->phone}} @endforeach</li>
 									</ul>
 								</div>
 								<div class="single-info">
 									<i class="fa fa-envelope-open"></i>
-									<h4 class="title">Mail:</h4>
+									<h4 class="title">Mail :</h4>
 									<ul>
 										<li><a href="mailto:info@yourwebsite.com">@foreach($settings as $data) {{$data->email}} @endforeach</a></li>
 									</ul>
 								</div>
 								<div class="single-info">
 									<i class="fa fa-location-arrow"></i>
-									<h4 class="title">Notre adresse:</h4>
+									<h4 class="title">Notre adresse :</h4>
 									<ul>
 										<li>@foreach($settings as $data) {{$data->address}} @endforeach</li>
 									</ul>
@@ -103,30 +103,26 @@
 				</div>
 			</div>
 	</section>
-	<!--/ End Contact -->
+	<!--/ Fin Contact -->
 	
-	<!-- Map Section -->
+	<!-- Section Carte -->
 	<!--<div class="map-section">
 		<div id="myMap">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14130.857353934944!2d85.36529494999999!3d27.6952226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sne!2snp!4v1595323330171!5m2!1sne!2snp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 		</div>-->
 	</div>
-	<!--/ End Map Section -->
+	<!--/ Fin Section Carte -->
 	
-	<!-- Start Shop Newsletter  -->
+	<!-- Début Newsletter Boutique -->
 
-
-
-
-
-	<!-- End Shop Newsletter -->
+	<!-- Fin Newsletter Boutique -->
 	<!--================Contact Success  =================-->
 	<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content">
 			<div class="modal-header">
-				<h2 class="text-success">Merci!</h2>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<h2 class="text-success">Merci !</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
@@ -137,13 +133,13 @@
 		</div>
 	</div>
 	
-	<!-- Modals error -->
+	<!-- Modale d'erreur -->
 	<div class="modal fade" id="error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content">
 			<div class="modal-header">
-				<h2 class="text-warning">Désolé!</h2>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<h2 class="text-warning">Désolé !</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
@@ -154,6 +150,7 @@
 		</div>
 	</div>
 @endsection
+
 
 @push('styles')
 <style>

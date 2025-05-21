@@ -3,14 +3,14 @@
 @section('title','ElectroJardin')
 
 @section('main-content')
-    <!-- Breadcrumbs -->
+    <!-- Fil d'Ariane -->
     <div class="breadcrumbs">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="{{route('home')}}">Acceuil<i class="ti-arrow-right"></i></a></li>
+                            <li><a href="{{route('home')}}">Accueil<i class="ti-arrow-right"></i></a></li>
                             <li class="active"><a href="javascript:void(0);">Se connecter</a></li>
                         </ul>
                     </div>
@@ -18,17 +18,17 @@
             </div>
         </div>
     </div>
-    <!-- End Breadcrumbs -->
+    <!-- Fin Fil d'Ariane -->
             
-    <!-- Shop Login -->
+    <!-- Connexion boutique -->
     <section class="shop login section">
         <div class="container">
             <div class="row"> 
                 <div class="col-lg-7 offset-lg-3 col-12">
                     <div class="login-form">
-                        <h2>Login</h2>
+                        <h2>Connexion</h2>
                         <p>Veuillez vous connecter afin de finaliser votre commande plus rapidement</p>
-                        <!-- Form -->
+                        <!-- Formulaire -->
                         <form class="form" method="post" action="{{route('login.submit')}}">
                             @csrf
                             <div class="row">
@@ -61,23 +61,23 @@
 
                                     </div>
                                     <div class="checkbox">
-                                        <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Se rappeler de moi</label>
+                                        <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Se souvenir de moi</label>
                                     </div>
                                     @if (Route::has('password.request'))
                                         <a class="lost-pass" href="{{ route('password.request') }}">
-                                            Mot de passe oublié?
+                                            Mot de passe oublié ?
                                         </a>
                                     @endif
                                 </div>
                             </div>
                         </form>
-                        <!--/ End Form -->
+                        <!--/ Fin formulaire -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--/ End Login -->
+    <!--/ Fin Connexion -->
 @endsection
 @push('styles')
 <style>

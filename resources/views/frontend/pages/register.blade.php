@@ -3,14 +3,14 @@
 @section('title','ElectroJardin')
 
 @section('main-content')
-	<!-- Breadcrumbs -->
+	<!-- Fil d'Ariane -->
     <div class="breadcrumbs">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="{{route('home')}}">Acceuil<i class="ti-arrow-right"></i></a></li>
+                            <li><a href="{{route('home')}}">Accueil<i class="ti-arrow-right"></i></a></li>
                             <li class="active"><a href="javascript:void(0);">S'inscrire</a></li>
                         </ul>
                     </div>
@@ -18,17 +18,17 @@
             </div>
         </div>
     </div>
-    <!-- End Breadcrumbs -->
+    <!-- Fin Fil d'Ariane -->
             
-    <!-- Shop Login -->
+    <!-- Page d'inscription -->
     <section class="shop login section">
         <div class="container">
             <div class="row"> 
                 <div class="col-lg-7 offset-lg-3 col-12">
                     <div class="login-form">
-                        <h2>Register</h2>
+                        <h2>Inscription</h2>
                         <p>Veuillez vous inscrire afin de finaliser votre commande plus rapidement</p>
-                        <!-- Form -->
+                        <!-- Formulaire -->
                         <form class="form" method="post" action="{{route('register.submit')}}">
                             @csrf
                             <div class="row">
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label>Mail<span>*</span></label>
+                                        <label>Email<span>*</span></label>
                                         <input type="text" name="email" placeholder="" required="required" value="{{old('email')}}">
                                         @error('email')
                                             <span class="text-danger">{{$message}}</span>
@@ -80,13 +80,13 @@
                                 </div>
                             </div>
                         </form>
-                        <!--/ End Form -->
+                        <!--/ Fin du formulaire -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--/ End Login -->
+    <!--/ Fin de la page d'inscription -->
 @endsection
 
 @push('styles')

@@ -1,14 +1,14 @@
 @extends('frontend.layouts.master')
 @section('title','ElectroJardin')
 @section('main-content')
-	<!-- Breadcrumbs -->
+	<!-- Fil d'Ariane -->
 	<div class="breadcrumbs">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<div class="bread-inner">
 						<ul class="bread-list">
-							<li><a href="{{('home')}}">Acceuil<i class="ti-arrow-right"></i></a></li>
+							<li><a href="{{('home')}}">Accueil<i class="ti-arrow-right"></i></a></li>
 							<li class="active"><a href="">Panier</a></li>
 						</ul>
 					</div>
@@ -16,21 +16,21 @@
 			</div>
 		</div>
 	</div>
-	<!-- End Breadcrumbs -->
+	<!-- Fin Fil d'Ariane -->
 
-	<!-- Shopping Cart -->
+	<!-- Panier d'achat -->
 	<div class="shopping-cart section">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<!-- Shopping Summery -->
+					<!-- Récapitulatif du panier -->
 					<table class="table shopping-summery">
 						<thead>
 							<tr class="main-hading">
 								<th>PRODUIT</th>
 								<th>NOM</th>
 								<th class="text-center">PRIX</th>
-								<th class="text-center">QUANTITE</th>
+								<th class="text-center">QUANTITÉ</th>
 								<th class="text-center">TOTAL</th>
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
 							</tr>
@@ -49,15 +49,16 @@
 												<p class="product-name"><a href="{{route('product-detail',$cart->product['slug'])}}" target="_blank">{{$cart->product['title']}}</a></p>
 												<p class="product-des">{!!($cart['summary']) !!}</p>
 											</td>
-											<td class="price" data-title="Price"><span>${{number_format($cart['price'],2)}}</span></td>
-											<td class="qty" data-title="Qty"><!-- Input Order -->
+											<td class="price" data-title="Prix"><span>${{number_format($cart['price'],2)}}</span></td>
+											<td class="qty" data-title="Quantité">
+												<!-- Entrée quantité -->
 												<div class="input-group">
 													<div class="button minus">
 														<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[{{$key}}]">
 															<i class="ti-minus"></i>
 														</button>
 													</div>
-													<input type="text" name="quant[{{$key}}]" class="input-number"  data-min="1" data-max="100" value="{{$cart->quantity}}">
+													<input type="text" name="quant[{{$key}}]" class="input-number" data-min="1" data-max="100" value="{{$cart->quantity}}">
 													<input type="hidden" name="qty_id[]" value="{{$cart->id}}">
 													<div class="button plus">
 														<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[{{$key}}]">
@@ -65,148 +66,73 @@
 														</button>
 													</div>
 												</div>
-												<!--/ End Input Order -->
+												<!--/ Fin Entrée quantité -->
 											</td>
 											<td class="total-amount cart_single_price" data-title="Total"><span class="money">${{$cart['amount']}}</span></td>
 
-											<td class="action" data-title="Remove"><a href="{{route('cart-delete',$cart->id)}}"><i class="ti-trash remove-icon"></i></a></td>
+											<td class="action" data-title="Supprimer"><a href="{{route('cart-delete',$cart->id)}}"><i class="ti-trash remove-icon"></i></a></td>
 										</tr>
 									@endforeach
-									<track>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td class="float-right">
+									<tr>
+										<td colspan="6" class="text-right">
 											<button class="btn float-right" type="submit">Mettre à jour</button>
 										</td>
-									</track>
+									</tr>
 								@else
-										<tr>
-											<td class="text-center">
-												Aucun panier disponible. <a href="{{route('product-grids')}}" style="color:blue;">Continuer l'achat</a>
-
-											</td>
-										</tr>
+									<tr>
+										<td class="text-center" colspan="6">
+											Aucun article dans le panier. <a href="{{route('product-grids')}}" style="color:blue;">Continuer mes achats</a>
+										</td>
+									</tr>
 								@endif
-
 							</form>
 						</tbody>
 					</table>
-					<!--/ End Shopping Summery -->
+					<!--/ Fin Récapitulatif du panier -->
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-12">
-					<!-- Total Amount -->
+					<!-- Montant total -->
 					<div class="total-amount">
 						<div class="row">
-							<!--<div class="col-lg-8 col-md-5 col-12">
-								<div class="left">
-									<div class="coupon">
-									<form action="{{route('coupon-store')}}" method="POST">
-											@csrf
-											<input name="code" placeholder="Enter Your Coupon">
-											<button class="btn">Apply</button>
-										</form>
-									</div>
-									{{-- <div class="checkbox">`
-										@php
-											$shipping=DB::table('shippings')->where('status','active')->limit(1)->get();
-										@endphp
-										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox" onchange="showMe('shipping');"> Shipping</label>
-									</div> --}}
-								</div>
-							</div>-->
 							<div class="col-lg-4 col-md-7 col-12">
 								<div class="right">
 									<ul>
-										<li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Sous-total du panier<span>${{number_format(Helper::totalCartPrice(),2)}}</span></li>
+										<li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Sous-total du panier <span>${{number_format(Helper::totalCartPrice(),2)}}</span></li>
 
 										@if(session()->has('coupon'))
-										<li class="coupon_price" data-price="{{Session::get('coupon')['value']}}">Vous économisez <span>${{number_format(Session::get('coupon')['value'],2)}}</span></li>
+											<li class="coupon_price" data-price="{{Session::get('coupon')['value']}}">Vous économisez <span>${{number_format(Session::get('coupon')['value'],2)}}</span></li>
 										@endif
+
 										@php
-											$total_amount=Helper::totalCartPrice();
+											$total_amount = Helper::totalCartPrice();
 											if(session()->has('coupon')){
-												$total_amount=$total_amount-Session::get('coupon')['value'];
+												$total_amount -= Session::get('coupon')['value'];
 											}
 										@endphp
-										@if(session()->has('coupon'))
-											<li class="last" id="order_total_price">Vous Payez <span>${{number_format($total_amount,2)}}</span></li>
-										@else
-											<li class="last" id="order_total_price">Vou Payez<span>${{number_format($total_amount,2)}}</span></li>
-										@endif
+
+										<li class="last" id="order_total_price">Vous payez <span>${{number_format($total_amount,2)}}</span></li>
 									</ul>
 									<div class="button5">
-										<a href="{{route('checkout')}}" class="btn">Passer à la caisse"</a>
-										<a href="{{route('product-grids')}}" class="btn">Continuer l'achat</a>
+										<a href="{{route('checkout')}}" class="btn">Passer à la caisse</a>
+										<a href="{{route('product-grids')}}" class="btn">Continuer mes achats</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!--/ End Total Amount -->
+					<!--/ Fin Montant total -->
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--/ End Shopping Cart -->
-
-	<!-- Start Shop Services Area  
-	<section class="shop-services section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6 col-12">-->
-					<!-- Start Single Service 
-					<div class="single-service">
-						<i class="ti-rocket"></i>
-						<h4>Free shiping</h4>
-						<p>Orders over $100</p>
-					</div>-->
-					<!-- End Single Service 
-				</div>
-				<div class="col-lg-3 col-md-6 col-12">-->
-					<!-- Start Single Service 
-					<div class="single-service">
-						<i class="ti-reload"></i>
-						<h4>Free Return</h4>
-						<p>Within 30 days returns</p>
-					</div>-->
-					<!-- End Single Service
-				</div>
-				<div class="col-lg-3 col-md-6 col-12"> -->
-					<!-- Start Single Service 
-					<div class="single-service">
-						<i class="ti-lock"></i>
-						<h4>Sucure Payment</h4>
-						<p>100% secure payment</p>
-					</div>-->
-					<!-- End Single Service 
-				</div>
-				<div class="col-lg-3 col-md-6 col-12">-->
-					<!-- Start Single Service 
-					<div class="single-service">
-						<i class="ti-tag"></i>
-						<h4>Best Peice</h4>
-						<p>Guaranteed price</p>
-					</div>-->
-					<!-- End Single Service
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- End Shop Newsletter -->
-
-	<!-- Start Shop Newsletter  -->
-	
-	<!-- End Shop Newsletter -->
-
+	<!--/ Fin Panier d'achat -->
 @endsection
+
 @push('styles')
 	<style>
-		li.shipping{
+		li.shipping {
 			display: inline-flex;
 			width: 100%;
 			font-size: 14px;
@@ -235,18 +161,19 @@
 			padding-right: 40px;
 			width: 100%;
 		}
-		.list li{
-			margin-bottom:0 !important;
+		.list li {
+			margin-bottom: 0 !important;
 		}
-		.list li:hover{
-			background:#F7941D !important;
-			color:white !important;
+		.list li:hover {
+			background: #F7941D !important;
+			color: white !important;
 		}
 		.form-select .nice-select::after {
 			top: 14px;
 		}
 	</style>
 @endpush
+
 @push('scripts')
 	<script src="{{asset('frontend/js/nice-select/js/jquery.nice-select.min.js')}}"></script>
 	<script src="{{ asset('frontend/js/select2/js/select2.min.js') }}"></script>
@@ -254,18 +181,4 @@
 		$(document).ready(function() { $("select.select2").select2(); });
   		$('select.nice-select').niceSelect();
 	</script>
-	<script>
-		$(document).ready(function(){
-			$('.shipping select[name=shipping]').change(function(){
-				let cost = parseFloat( $(this).find('option:selected').data('price') ) || 0;
-				let subtotal = parseFloat( $('.order_subtotal').data('price') );
-				let coupon = parseFloat( $('.coupon_price').data('price') ) || 0;
-				// alert(coupon);
-				$('#order_total_price span').text('$'+(subtotal + cost-coupon).toFixed(2));
-			});
-
-		});
-
-	</script>
-
 @endpush
