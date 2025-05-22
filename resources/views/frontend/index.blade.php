@@ -119,7 +119,7 @@
                                                 @if($product->stock<=0)
                                                     <span class="out-of-stock">Sale out</span>
                                                 @elseif($product->condition=='new')
-                                                    <span class="new">New</span
+                                                    <span class="new">New</span>
                                                 @elseif($product->condition=='hot')
                                                     <span class="hot">Hot</span>
                                                 @else
@@ -163,17 +163,17 @@
             </div>
         </div>
 </div>
-<!-- End Product Area -->
+<!-- End Product Area 
 {{-- @php
     $featured=DB::table('products')->where('is_featured',1)->where('status','active')->orderBy('id','DESC')->limit(1)->get();
 @endphp --}}
-<!-- Start Midium Banner  -->
+<!-- Start Midium Banner  
 <section class="midium-banner">
     <div class="container">
         <div class="row">
             @if($featured)
                 @foreach($featured as $data)
-                    <!-- Single Banner  -->
+                    <!-- Single Banner  
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="single-banner">
                             @php
@@ -187,12 +187,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /End Single Banner  -->
+                    <!-- /End Single Banner  
                 @endforeach
             @endif
         </div>
     </div>
-</section>
+</section>-->
 <!-- End Midium Banner -->
 
 <!-- Start Most Popular -->
@@ -252,7 +252,7 @@
     </div>
 </div>
 <!-- End Most Popular Area -->
-
+<br><br><br><br><hr>
 <!-- Start Shop Home List  -->
 <section class="shop-home-list section">
     <div class="container">
@@ -556,6 +556,8 @@
         #Gslider .carousel-indicators {
         bottom: 70px;
         }
+        
+        
     </style>
 @endpush
 

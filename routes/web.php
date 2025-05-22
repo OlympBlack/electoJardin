@@ -18,6 +18,8 @@
     use App\Http\Controllers\HomeController;
     use \UniSharp\LaravelFilemanager\Lfm;
     use App\Http\Controllers\Auth\ResetPasswordController;
+    use App\Http\Controllers\ConditionController;
+
     /*
     |--------------------------------------------------------------------------
     | Web Routes
@@ -210,3 +212,13 @@
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
         Lfm::routes();
     });
+
+    //service client
+    Route::view('/condition', 'frontend.serviceclient.condition')->name('condition');
+    Route::view('/aide', 'frontend.serviceclient.aide')->name('aide');
+    Route::view('/modepaiement', 'frontend.serviceclient.modepaiement')->name('modepaiement');
+    Route::view('/remboussement', 'frontend.serviceclient.remboussement')->name('remboussement');
+    Route::view('/livraison', 'frontend.serviceclient.livraison')->name('livraison');
+    Route::view('/confidentialite', 'frontend.serviceclient.confidentialite')->name('confidentialite');
+
+

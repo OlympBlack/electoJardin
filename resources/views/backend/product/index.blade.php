@@ -68,7 +68,7 @@
                     <td>{{(($product->is_featured==1)? 'Oui': 'Non')}}</td>
                     <td>Rs. {{$product->price}} /-</td>
                     <td>{{$product->discount}}% OFF</td>
-                    <td>{{$product->size}}</td>
+                    
                     <td>{{$product->condition}}</td>
                     <td>{{ $product->brand ? ucfirst($product->brand->title) : 'Aucune marque' }}</td>
                     <td>

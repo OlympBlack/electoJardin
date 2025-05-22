@@ -191,7 +191,7 @@
                                             <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Accueil</a></li>
                                             <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Produits</a><span class="new">Nouveauté</span></li>                                                    
                                             {{Helper::getHeaderCategory()}}
-                                            <li class="{{Request::path()=='blog' ? 'active' : ''}}"><a href="{{route('blog')}}">Blog</a></li>                                    
+                                            <!--<li class="{{Request::path()=='blog' ? 'active' : ''}}"><a href="{{route('blog')}}">Blog</a></li> -->                                   
                                             <!--<li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">Qui sommes-nous</a></li>-->
                                             <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact</a></li>
                                         </ul>

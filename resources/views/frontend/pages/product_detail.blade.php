@@ -328,7 +328,7 @@
               </div>
               <div class="size">
                 <div class="row">
-                  <div class="col-lg-6 col-12">
+                  <!--<div class="col-lg-6 col-12">
                     <h5 class="title">Taille</h5>
                     <select>
                       <option selected="selected">s</option>
@@ -336,7 +336,7 @@
                       <option>l</option>
                       <option>xl</option>
                     </select>
-                  </div>
+                  </div>-->
                   <div class="col-lg-6 col-12">
                     <h5 class="title">Couleur</h5>
                     <select>

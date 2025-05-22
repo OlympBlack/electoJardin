@@ -58,7 +58,7 @@
         </div>
 
         <div class="form-group">
-          <label for="price" class="col-form-label">Prix en FCFA <span class="text-danger">*</span></label>
+          <label for="price" class="col-form-label">Prix en euro <span class="text-danger">*</span></label>
           <input id="price" type="number" name="price" placeholder="Entrez le prix"  value="{{old('price')}}" class="form-control">
           @error('price')
           <span class="text-danger">{{$message}}</span>
@@ -67,7 +67,7 @@
 
         <div class="form-group">
           <label for="discount" class="col-form-label">Réduction(%)</label>
-          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Entrez la réduction"  value="{{old('discount')}}" class="form-control">
+          <input id="discount" type="number" name="discount"  placeholder="Entrez la réduction"  value="{{old('discount')}}" class="form-control">
           @error('discount')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -121,6 +121,7 @@
                   </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
+
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')

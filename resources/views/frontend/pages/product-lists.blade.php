@@ -306,7 +306,7 @@
                                         <p>{!! html_entity_decode($product->summary) !!}</p>
                                     </div>
                                     @if($product->size)
-                                        <div class="size">
+                                        <!--<div class="size">
                                             <h4>Taille</h4>
                                             <ul>
                                                 @php 
@@ -316,7 +316,7 @@
                                                     <li><a href="#" class="one">{{$size}}</a></li>
                                                 @endforeach
                                             </ul>
-                                        </div>
+                                        </div>-->
                                     @endif
                                     <form action="{{route('single-add-to-cart')}}" method="POST">
                                         @csrf 

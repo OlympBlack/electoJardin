@@ -71,7 +71,7 @@
 
         <div class="form-group">
           <label for="discount" class="col-form-label">Remise (%)</label>
-          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Entrez la remise"  value="{{$product->discount}}" class="form-control">
+          <input id="discount" type="number" name="discount" placeholder="Entrez la remise"  value="{{$product->discount}}" class="form-control">
           @error('discount')
           <span class="text-danger">{{$message}}</span>
           @enderror

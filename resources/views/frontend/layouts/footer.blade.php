@@ -26,9 +26,9 @@
 						<ul>
 							<!--<li><a href="{{route('about-us')}}">À propos de nous</a></li>
 							<li><a href="#">FAQ</a></li>-->
-							<li><a href="#">Conditions générales</a></li>
+							<li><a href="{{ route('condition') }}">Conditions générales</a></li>
 							<li><a href="{{route('contact')}}">Contact</a></li>
-							<li><a href="#">Aide</a></li>
+							<li><a href="{{ route('aide') }}">Aide</a></li>
 						</ul>
 					</div>
 					<!-- Fin widget unique -->
@@ -38,11 +38,11 @@
 					<div class="single-footer links">
 						<h4>Service Client</h4>
 						<ul>
-							<li><a href="#">Méthodes de paiement</a></li>
-							<li><a href="#">Remboursement</a></li>
-							<li><a href="#">Retours</a></li>
-							<li><a href="#">Livraison</a></li>
-							<li><a href="#">Politique de confidentialité</a></li>
+							<li><a href="{{ route('modepaiement') }}">Méthodes de paiement</a></li>
+							<li><a href="{{ route('remboussement') }}">Remboursement</a></li>
+							<!--<li><a href="#">Retours</a></li>-->
+							<li><a href="{{ route('livraison') }}">Livraison</a></li>
+							<li><a href="{{ route('confidentialite') }}">Politique de confidentialité</a></li>
 						</ul>
 					</div>
 					<!-- Fin widget unique -->
