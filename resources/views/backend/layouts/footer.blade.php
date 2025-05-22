@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
   <div class="container my-auto">
     <div class="copyright text-center my-auto">
-      <span>Copyright &copy; Electro Jardin {{ date('Y') }}</span>
+            <span> &copy; Electro Jardin {{date('Y')}} &copy;</span>
     </div>
   </div>
 </footer>

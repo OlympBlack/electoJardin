@@ -134,7 +134,7 @@
                                                     <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" ><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
                                                 </div>
                                                 <div class="product-action-2">
-                                                    <a title="Add to cart" href="{{route('add-to-cart',$product->slug)}}">Add to cart</a>
+                                                    <a title="Ajouter au panier" href="{{route('add-to-cart',$product->slug)}}">Ajouter au panier</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -228,7 +228,7 @@
                                         <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" ><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
                                     </div>
                                     <div class="product-action-2">
-                                        <a href="{{route('add-to-cart',$product->slug)}}">Add to cart</a>
+                                        <a href="{{route('add-to-cart',$product->slug)}}">Ajouter au panier</a>
                                     </div>
                                 </div>
                             </div>
@@ -498,7 +498,7 @@
                                                 <!--/ End Input Order -->
                                             </div>
                                             <div class="add-to-cart">
-                                                <button type="submit" class="btn">Add to cart</button>
+                                                <button type="submit" class="btn">Ajouter au panier</button>
                                                 <a href="{{route('add-to-wishlist',$product->slug)}}" class="btn min"><i class="ti-heart"></i></a>
                                             </div>
                                         </form>

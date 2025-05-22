@@ -60,7 +60,7 @@
 							</ul>
 						</div>
 						<!-- Fin widget unique -->
-						<div class="sharethis-inline-follow-buttons"></div>
+						<!--<div class="sharethis-inline-follow-buttons"></div>-->
 					</div>
 					<!-- Fin widget unique -->
 				</div>
@@ -74,7 +74,7 @@
 				<div class="row">
 					<div class="col-lg-6 col-12">
 						<div class="left">
-							<p>Copyright © {{date('Y')}} - ElectroJardin</p>
+							      <span class="text-white"> &copy; Electro Jardin {{date('Y')}} &copy;</span>
 						</div>
 					</div>
 					<div class="col-lg-6 col-12">
