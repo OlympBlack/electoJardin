@@ -3,14 +3,14 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Post</h5>
+    <h5 class="card-header">Modifier l'article</h5>
     <div class="card-body">
     <form method="post" action="{{route('settings.update')}}">
         @csrf 
         {{-- @method('PATCH') --}}
         {{-- {{dd($data)}} --}}
         <div class="form-group">
-          <label for="short_des" class="col-form-label">Short Description <span class="text-danger">*</span></label>
+          <label for="short_des" class="col-form-label">Description courte <span class="text-danger">*</span></label>
           <textarea class="form-control" id="quote" name="short_des">{{$data->short_des}}</textarea>
           @error('short_des')
           <span class="text-danger">{{$message}}</span>
@@ -28,7 +28,7 @@
           <div class="input-group">
               <span class="input-group-btn">
                   <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i> Choose
+                  <i class="fa fa-picture-o"></i> Choisir
                   </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$data->photo}}">
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-          <label for="address" class="col-form-label">Address <span class="text-danger">*</span></label>
+          <label for="address" class="col-form-label">Adresse <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="address" required value="{{$data->address}}">
           @error('address')
           <span class="text-danger">{{$message}}</span>
@@ -55,7 +55,7 @@
           @enderror
         </div>
         <div class="form-group">
-          <label for="phone" class="col-form-label">Phone Number <span class="text-danger">*</span></label>
+          <label for="phone" class="col-form-label">Numéro de téléphone <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="phone" required value="{{$data->phone}}">
           @error('phone')
           <span class="text-danger">{{$message}}</span>
@@ -92,7 +92,7 @@
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Update</button>
+           <button class="btn btn-success" type="submit">Mettre à jour</button>
         </div>
       </form>
     </div>
@@ -103,8 +103,8 @@
 @push('styles')
 <link rel="stylesheet" href="{{asset('backend/summernote/summernote.min.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-
 @endpush
+
 @push('scripts')
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 <script src="{{asset('backend/summernote/summernote.min.js')}}"></script>
@@ -115,7 +115,7 @@
 
     $(document).ready(function() {
     $('#summary').summernote({
-      placeholder: "Write short description.....",
+      placeholder: "Écrivez une courte description.....",
         tabsize: 2,
         height: 150
     });
@@ -123,14 +123,14 @@
 
     $(document).ready(function() {
       $('#quote').summernote({
-        placeholder: "Write short Quote.....",
+        placeholder: "Écrivez une courte citation.....",
           tabsize: 2,
           height: 100
       });
     });
     $(document).ready(function() {
       $('#description').summernote({
-        placeholder: "Write detail description.....",
+        placeholder: "Écrivez une description détaillée.....",
           tabsize: 2,
           height: 150
       });

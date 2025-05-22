@@ -6,7 +6,7 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
+        <!-- Polices -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
@@ -68,12 +68,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Accueil</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Connexion</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Inscription</a>
                         @endif
                     @endauth
                 </div>
@@ -85,9 +85,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://laravel-news.com">Nouvelles</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
@@ -101,27 +101,30 @@
 
 <!DOCTYPE html>
 <head>
-  <title>Pusher Test</title>
+  <title>Test Pusher</title>
   <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
   <script>
-
-    // Enable pusher logging - don't include this in production
+    // Activez les journaux Pusher - ne pas inclure en production
     Pusher.logToConsole = true;
 
+    // Initialisation de Pusher avec votre clé d'application
     var pusher = new Pusher('dbef79a7681a60303745', {
       cluster: 'ap2'
     });
 
+    // Abonnement au canal nommé 'my-channel'
     var channel = pusher.subscribe('my-channel');
+
+    // Liaison à l'événement 'my-event'
     channel.bind('my-event', function(data) {
-      alert(JSON.stringify(data));
+      alert(JSON.stringify(data)); // Affiche les données reçues sous forme de texte
     });
   </script>
 </head>
 <body>
-  <h1>Pusher Test</h1>
+  <h1>Test Pusher</h1>
   <p>
-    Try publishing an event to channel <code>my-channel</code>
-    with event name <code>my-event</code>.
+    Essayez de publier un événement sur le canal <code>my-channel</code>
+    avec le nom d'événement <code>my-event</code>.
   </p>
 </body>
