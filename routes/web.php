@@ -223,13 +223,7 @@
     Route::view('/livraison', 'frontend.serviceclient.livraison')->name('livraison');
     Route::view('/confidentialite', 'frontend.serviceclient.confidentialite')->name('confidentialite');
 
-
-//le paiement
-Route::get('/paiement', [App\Http\Controllers\PaiementController::class, 'show'])->name('paiement.show');
-Route::post('/paiement', [App\Http\Controllers\PaiementController::class, 'paiement'])->name('paiement.effectuer');
-
-
+//paiement avec stripe
+Route::post('/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
 Route::get('/checkout/success', [StripeController::class, 'success'])->name('stripe.success');
 Route::get('/checkout/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
-
-Route::post('/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');

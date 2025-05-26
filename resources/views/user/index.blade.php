@@ -95,7 +95,7 @@
 
       <!-- Commandes de l'utilisateur -->
       <div class="col-xl-12 col-lg-12">
-        <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered table-responsive" id="order-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th>N°</th>
