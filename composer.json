@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "barryvdh/laravel-dompdf": "^2.0",
+        "barryvdh/laravel-dompdf": "^2.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
@@ -16,6 +16,7 @@
         "pusher/pusher-php-server": "^7.2",
         "spatie/laravel-newsletter": "^5.1",
         "srmklive/paypal": "^3.0",
+        "stripe/stripe-php": "^17.2",
         "unisharp/laravel-filemanager": "^2.6"
     },
     "require-dev": {

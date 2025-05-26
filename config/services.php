@@ -45,4 +45,10 @@ return [
         'redirect' => 'http://localhost:8000/login/facebook/callback',
      ],
 
+     'stripe' => [
+    'key' => env('STRIPE_KEY'),
+    'secret' => env('STRIPE_SECRET'),
+    ],
+
+
 ];
