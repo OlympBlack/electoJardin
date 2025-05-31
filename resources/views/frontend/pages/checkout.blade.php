@@ -24,11 +24,11 @@
     <!-- Start Checkout -->
     <section class="shop checkout section">
         <div class="container">
-                <form class="form" method="POST" action="{{route('stripe.checkout')}}">
+                <form class="form" method="POST" action="{{route('order.store')}}">
                     @csrf
                     <div class="row"> 
 
-                        <div class="col-lg-8 col-12">
+                        <div class="col-lg-6 col-12">
                             <div class="checkout-form">
                                 <h2>Faites votre paiement ic</h2>
                                 <p>Veuillez vous incrire afin de passer à la caisse plus rapidement</p>
@@ -352,9 +352,9 @@
                                     </div>
                                     
                                 </div>
-                                <!--/ End Form -->
+                                <!--/ End Form 
                             </div>
-                        </div>
+                        </div>-->
                         <div class="col-lg-4 col-12">
                             <div class="order-details">
                                 <!-- Order Widget -->
@@ -402,8 +402,11 @@
                                         <div class="checkbox">
                                             {{-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> Check Payments</label> --}}
                                             <form-group>
-                                                <input name="payment_method" type="radio" value="card" checked> 
-                                                <label>Paiement par carte bancaire</label>
+                                                <input name="payment_method" type="hidden" checked value="bank_transfer"> 
+                                                <label>Virement bancaire</label>
+                                                <div class="alert alert-info mt-3">
+                                                    Le paiement se fera par <strong>virement bancaire</strong>. Les coordonnées vous seront fournies après la validation de la commande.
+                                                </div>
                                             </form-group>
                                             
                                         </div>
@@ -421,7 +424,7 @@
                                 <div class="single-widget get-button">
                                     <div class="content">
                                         <div class="button">
-                                            <button type="submit" class="btn">Passer à la caisse</button>
+                                            <button type="submit" class="btn">Valider la commande</button>
                                         </div>
                                     </div>
                                 </div>

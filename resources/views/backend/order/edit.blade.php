@@ -11,12 +11,11 @@
       @method('PATCH')
       <div class="form-group">
         <label for="status">Statut :</label>
-        <select name="status" id="" class="form-control">
-          <option value="new" {{($order->status=='delivered' || $order->status=="process" || $order->status=="cancel") ? 'disabled' : ''}}  {{(($order->status=='new')? 'selected' : '')}}>Nouveau</option>
-          <option value="process" {{($order->status=='delivered'|| $order->status=="cancel") ? 'disabled' : ''}}  {{(($order->status=='process')? 'selected' : '')}}>En cours</option>
-          <option value="delivered" {{($order->status=="cancel") ? 'disabled' : ''}}  {{(($order->status=='delivered')? 'selected' : '')}}>Livrée</option>
-          <option value="cancel" {{($order->status=='delivered') ? 'disabled' : ''}}  {{(($order->status=='cancel')? 'selected' : '')}}>Annulée</option>
-        </select>
+        <select name="payment_status" class="form-control">
+          <option value="paid" {{ $order->payment_status == 'paid' ? 'selected' : '' }}>Payé</option>
+          <option value="pending" {{ $order->payment_status == 'pending' ? 'selected' : '' }}>En attente</option>
+          <option value="unpaid" {{ $order->payment_status == 'unpaid' ? 'selected' : '' }}>Non payé</option>
+      </select>
       </div>
       <button type="submit" class="btn btn-primary">Mettre à jour</button>
     </form>

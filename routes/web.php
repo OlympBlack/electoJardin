@@ -224,6 +224,13 @@
     Route::view('/confidentialite', 'frontend.serviceclient.confidentialite')->name('confidentialite');
 
 //paiement avec stripe
-Route::post('/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
-Route::get('/checkout/success', [StripeController::class, 'success'])->name('stripe.success');
-Route::get('/checkout/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
+//Route::post('/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
+//Route::get('/checkout/success', [StripeController::class, 'success'])->name('stripe.success');
+//Route::get('/checkout/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
+
+// le virement bancaire
+Route::get('/order-track', [OrderController::class, 'orderTrack'])->name('order.track');
+Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+Route::post('/product-track-order', [OrderController::class, 'productTrackOrder'])->name('product.track.order');
+
+

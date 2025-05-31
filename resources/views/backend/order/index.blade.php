@@ -55,14 +55,12 @@
                     <td>@foreach($shipping_charge as $data) $ {{number_format($data,2)}} @endforeach</td>
                     <td>${{number_format($order->total_amount,2)}}</td>
                     <td>
-                        @if($order->status=='new')
-                          <span class="badge badge-primary">{{$order->status}}</span>
-                        @elseif($order->status=='process')
-                          <span class="badge badge-warning">{{$order->status}}</span>
-                        @elseif($order->status=='delivered')
-                          <span class="badge badge-success">{{$order->status}}</span>
-                        @else
-                          <span class="badge badge-danger">{{$order->status}}</span>
+                        @if($order->payment_status=='paid')
+                          <span class="badge badge-success">Payé</span>
+                        @elseif($order->payment_status=='pending')
+                          <span class="badge badge-warning">En attente</span>
+                        @elseif($order->payment_status=='unpaid')
+                          <span class="badge badge-success">Non payé</span>
                         @endif
                     </td>
                     <td>
