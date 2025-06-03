@@ -31,7 +31,7 @@
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
                             aria-label="Recherche" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
+                            <button class="btn btn-dark" type="button">
                                 <i class="fas fa-search fa-sm"></i>
                             </button>
                         </div>
@@ -44,7 +44,7 @@
         <li class="nav-item dropdown no-arrow mx-1">
             <a class="nav-link dropdown-toggle" href="{{ route('home') }}" target="_blank" data-toggle="tooltip"
                 data-placement="bottom" title="Accueil" role="button">
-                <i class="fas fa-home fa-fw"></i>
+                <i class="fas fa-home text-dark fa-fw"></i>
             </a>
         </li>
 
@@ -64,7 +64,7 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth()->user()->name }}</span>
+                <span class="mr-2 d-none d-lg-inline text-dark small">{{ Auth()->user()->name }}</span>
                 @if(Auth()->user()->photo)
                     <img class="img-profile rounded-circle" src="{{ Auth()->user()->photo }}">
                 @else
@@ -74,21 +74,21 @@
             <!-- Menu déroulant de l'utilisateur -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="{{ route('admin-profile') }}">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-dark"></i>
                     Profil
                 </a>
                 <a class="dropdown-item" href="{{ route('change.password.form') }}">
-                    <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <i class="fas fa-key fa-sm fa-fw mr-2 text-dark"></i>
                     Modifier le mot de passe
                 </a>
                 <a class="dropdown-item" href="{{ route('settings') }}">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-dark"></i>
                     Paramètres
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Se déconnecter
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-dark"></i> Se déconnecter
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

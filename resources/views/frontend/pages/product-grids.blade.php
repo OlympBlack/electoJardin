@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','ElectroJardin')
+@section('title','Produits')
 
 @section('main-content')
 	<!-- Breadcrumbs -->
@@ -160,11 +160,11 @@
                                 <!--/ End Shop Top -->
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" id="order-dataTable">
                             {{-- {{$products}} --}}
                             @if(count($products)>0)
                                 @foreach($products as $product)
-                                    <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-12" >
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <a href="{{route('product-detail',$product->slug)}}">
@@ -177,15 +177,23 @@
                                                                 <span class="price-dec">{{$product->discount}} % Off</span>
                                                     @endif
                                                 </a>
-                                                <div class="button-head">
-                                                    <div class="product-action">
-                                                        <a data-toggle="modal" data-target="#{{$product->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Achat rapide</span></a>
-                                                        <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" class="wishlist" data-id="{{$product->id}}"><i class=" ti-heart "></i><span>Ajouter aux favoris</span></a>
-                                                    </div>
-                                                    <div class="product-action-2">
-                                                        <a title="Add to cart" href="{{route('add-to-cart',$product->slug)}}">Ajouter au panier</a>
-                                                    </div>
+                                                <div class="button-head" style="margin-top: 15px;">
+ 
+                                                <div class="product-action">
+                                                    <a data-toggle="modal" data-target="#{{$product->id}}" title="Quick View" href="#">
+                                                        <i class="ti-eye"></i><span>Achat rapide</span>
+                                                    </a>
+                                                    <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" class="wishlist" data-id="{{$product->id}}">
+                                                        <i class="ti-heart"></i><span>Ajouter aux favoris</span>
+                                                    </a>
                                                 </div>
+                                                <div class="product-action-2">
+                                                    <a title="Ajouter au panier" href="{{route('add-to-cart',$product->slug)}}">
+                                                        <i class="ti-shopping-cart"></i>Ajouter au panier
+                                                    </a>
+                                                </div>
+                                            </div>
+
                                             </div>
                                             <div class="product-content">
                                                 <h3><a href="{{route('product-detail',$product->slug)}}">{{$product->title}}</a></h3>
@@ -369,6 +377,7 @@
 
 @endsection
 @push('styles')
+<!--<link href="{{ asset('backend/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">-->
 <style>
     .pagination{
         display:inline-flex;
@@ -381,10 +390,53 @@
         margin-top:10px;
         color: white;
     }
+
+
+    .product-action a,
+        .product-action-2 a {
+            display: inline-block;
+            background-color: #28a745; /* vert pour 'Achat rapide' */
+            color: #fff;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .product-action a.wishlist {
+            background-color: #dc3545; /* rouge pour 'Ajouter aux favoris' */
+        }
+
+        .product-action a i,
+        .product-action-2 a i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        .product-action a:hover,
+        .product-action-2 a:hover {
+            background-color: #1e7e34;
+            transform: scale(1.05);
+        }
+
+        .product-action a.wishlist:hover {
+            background-color: #c82333;
+        }
+
+        .product-action,
+        .product-action-2 {
+            margin-bottom: 8px;
+        }
 </style>
 @endpush
+
 @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+         <script src="{{ asset('backend/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>-->
     {{-- <script>
         $('.cart').click(function(){
             var quantity=1;
@@ -448,5 +500,61 @@
                 "  -  "+m_currency + $("#slider-range").slider("values", 1));
             }
         })
+
+
+   
+         /*
+       $('#order-dataTable').DataTable({
+            "columnDefs": [
+            {
+                "orderable": false,
+                "targets": [8]
+            }
+            ],
+            "language": {
+            "paginate": {
+                "previous": "Précédent",
+                "next": "Suivant"
+            },
+            "lengthMenu": "Afficher _MENU_ entrées",
+            "zeroRecords": "Aucun enregistrement trouvé",
+            "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées",
+            "infoEmpty": "Aucune donnée disponible",
+            "infoFiltered": "(filtré depuis _MAX_ entrées totales)"
+            }
+        });
+        
+
+        <!-- Script de suppression avec confirmation -->
+        <script>
+            $(document).ready(function(){
+                $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+
+                $('.dltBtn').click(function(e){
+                var form = $(this).closest('form');
+                var dataID = $(this).data('id');
+                e.preventDefault();
+                swal({
+                    title: "Êtes-vous sûr ?",
+                    text: "Une fois supprimé, vous ne pourrez pas récupérer cette donnée !",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                    form.submit();
+                    } else {
+                    swal("Votre donnée est en sécurité !");
+                    }
+                });
+                });
+            });
+        
+
     </script>
 @endpush

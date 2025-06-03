@@ -20,8 +20,8 @@
                     <!-- Partie droite haute -->
                     <div class="right-content">
                         <ul class="list-main">
-                            <li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Suivi de commande</a></li>
-                            {{-- <li><i class="ti-alarm-clock"></i> <a href="#">Offre du jour</a></li> --}}
+                            <!--<li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Suivi de commande</a></li>-->
+                            <!--{{-- <li><i class="ti-alarm-clock"></i> <a href="#">Offre du jour</a></li> --}}-->
                             @auth 
                                 @if(Auth::user()->role=='admin')
                                     <li><i class="ti-user"></i> <a href="{{route('admin')}}"  target="_blank">Tableau de bord</a></li>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-3 col-12">
+                <div class="col-lg-2 col-md-3 col-12 d-sm-block">
                     <div class="right-bar">
                         <!-- Formulaire de recherche -->
                         <div class="sinlge-bar shopping">

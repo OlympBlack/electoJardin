@@ -17,7 +17,7 @@
                     <div class="carousel-caption d-none d-md-block text-left">
                         <h1 class="wow fadeInDown">{{$banner->title}}</h1>
                         <p>{!! html_entity_decode($banner->description) !!}</p>
-                        <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('product-grids')}}" role="button">Shop Now<i class="far fa-arrow-alt-circle-right"></i></i></a>
+                        <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('product-grids')}}" role="button">Achéter maintenant<i class="far fa-arrow-alt-circle-right"></i></i></a>
                     </div>
                 </div>
             @endforeach
@@ -53,10 +53,10 @@
                                 @else
                                     <img src="https://via.placeholder.com/600x370" alt="#">
                                 @endif
-                                <div class="content">
+                                <!--<div class="content">
                                     <h3>{{$cat->title}}</h3>
-                                        <a href="{{route('product-cat',$cat->slug)}}">Discover Now</a>
-                                </div>
+                                        <a href="{{route('product-cat',$cat->slug)}}">Découvrir maintenant</a>
+                                </div>-->
                             </div>
                         </div>
                     @endif
@@ -130,8 +130,8 @@
                                             </a>
                                             <div class="button-head">
                                                 <div class="product-action">
-                                                    <a data-toggle="modal" data-target="#{{$product->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                                    <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" ><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+                                                    <a data-toggle="modal" data-target="#{{$product->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Voir le produit</span></a>
+                                                    <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" ><i class=" ti-heart "></i><span>Ajouter au favoris</span></a>
                                                 </div>
                                                 <div class="product-action-2">
                                                     <a title="Ajouter au panier" href="{{route('add-to-cart',$product->slug)}}">Ajouter au panier</a>
@@ -155,7 +155,7 @@
                              <!--/ End Single Tab -->
                             @endif
 
-                        <!--/ End Single Tab -->
+                            <!--/ End Single Tab -->
 
                         </div>
                     </div>
@@ -562,7 +562,7 @@
 @endpush
 
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script>
 
         /*==================================================================

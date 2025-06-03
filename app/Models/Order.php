@@ -77,4 +77,12 @@ class Order extends Model
     {
         return self::count();
     }
+
+     /**
+     * Relation entre les commandes et les produits
+     */
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

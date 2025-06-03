@@ -19,7 +19,6 @@
             <th>Nom</th>
             <th>Email</th>
             <th>Quantité</th>
-            <th>Frais</th>
             <th>Montant total</th>
             <th>Statut</th>
             <th>Action</th>
@@ -32,18 +31,15 @@
             <td>{{$order->first_name}} {{$order->last_name}}</td>
             <td>{{$order->email}}</td>
             <td>{{$order->quantity}}</td>
-            <td>${{$order->shipping->price}}</td>
             <td>${{number_format($order->total_amount,2)}}</td>
             <td>
-                @if($order->status=='new')
-                  <span class="badge badge-primary">{{$order->status}}</span>
-                @elseif($order->status=='process')
-                  <span class="badge badge-warning">{{$order->status}}</span>
-                @elseif($order->status=='delivered')
-                  <span class="badge badge-success">{{$order->status}}</span>
-                @else
-                  <span class="badge badge-danger">{{$order->status}}</span>
-                @endif
+                        @if($order->payment_status=='paid')
+                          <span class="badge badge-success">Payé</span>
+                        @elseif($order->payment_status=='pending')
+                          <span class="badge badge-warning">En attente</span>
+                        @elseif($order->payment_status=='unpaid')
+                          <span class="badge badge-success">Non payé</span>
+                        @endif
             </td>
             <td>
                 <form method="POST" action="{{route('order.destroy',[$order->id])}}">
@@ -76,28 +72,30 @@
                         <td>Quantité</td>
                         <td> : {{$order->quantity}}</td>
                     </tr>
-                    <tr>
-                        <td>Statut de la commande</td>
-                        <td> : {{$order->status}}</td>
-                    </tr>
-                    <tr>
-                      @php
-                          $shipping_charge=DB::table('shippings')->where('id',$order->shipping_id)->pluck('price');
-                      @endphp
-                        <td>Frais de livraison</td>
-                        <td> : ${{$order->shipping->price}}</td>
-                    </tr>
+                    
+                    
                     <tr>
                         <td>Montant total</td>
                         <td> : $ {{number_format($order->total_amount,2)}}</td>
                     </tr>
                     <tr>
                       <td>Méthode de paiement</td>
-                      <td> : @if($order->payment_method=='cod') Paiement à la livraison @else Paypal @endif</td>
+                      <td> : @if ($order->payment_method) Virement bancaire @endif</td>
                     </tr>
                     <tr>
                         <td>Statut du paiement</td>
-                        <td> : {{$order->payment_status}}</td>
+                       <td> :
+                        @if($order->payment_status == 'paid')
+                          Payé
+                        @elseif($order->payment_status == 'unpaid')
+                          Non payé
+                        @elseif($order->payment_status == 'pending')
+                          En attente
+                        @else
+                          Inconnu
+                        @endif
+                      </td>
+
                     </tr>
               </table>
             </div>

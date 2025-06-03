@@ -2,7 +2,7 @@
 
   <!-- Bouton de bascule de la barre latérale (Topbar) -->
   <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-    <i class="fa fa-bars"></i>
+    <i class="fa fa-bars text-dark"></i>
   </button>
 
   <!-- Barre de recherche supérieure -->
@@ -10,7 +10,7 @@
     <div class="input-group">
       <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..." aria-label="Recherche" aria-describedby="basic-addon2">
       <div class="input-group-append">
-        <button class="btn btn-primary" type="button">
+        <button class="btn btn-dark" type="button">
           <i class="fas fa-search fa-sm"></i>
         </button>
       </div>
@@ -43,7 +43,7 @@
     {{-- Page d'accueil --}}
     <li class="nav-item dropdown no-arrow mx-1">
       <a class="nav-link dropdown-toggle" href="{{route('home')}}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Accueil" role="button">
-        <i class="fas fa-home fa-fw"></i>
+        <i class="fas fa-home text-dark fa-fw"></i>
       </a>
     </li>
 
@@ -52,7 +52,7 @@
     <!-- Élément - Informations utilisateur -->
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth()->user()->name}}</span>
+        <span class="mr-2 d-none d-lg-inline text-dark small">{{Auth()->user()->name}}</span>
         @if(Auth()->user()->photo)
           <img class="img-profile rounded-circle" src="{{Auth()->user()->photo}}">
         @else

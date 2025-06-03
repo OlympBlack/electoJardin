@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','ElectroJardin')
+@section('title','Connexion')
 
 @section('main-content')
     <!-- Fil d'Ariane -->

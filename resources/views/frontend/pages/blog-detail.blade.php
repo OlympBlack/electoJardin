@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-TECH || Page Détail du Blog')
+@section('title','Détail du Blog')
 
 @section('main-content')
     <!-- Fil d'Ariane -->

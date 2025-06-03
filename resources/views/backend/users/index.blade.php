@@ -55,10 +55,12 @@
                     <td>{{(($user->created_at)? $user->created_at->diffForHumans() : '')}}</td>
                     <td>{{$user->role}}</td>
                     <td>
-                        @if($user->status=='active')
-                            <span class="badge badge-success">{{$user->status}}</span>
-                        @else
-                            <span class="badge badge-warning">{{$user->status}}</span>
+                        @if($order->payment_status=='paid')
+                          <span class="badge badge-success">Payé</span>
+                        @elseif($order->payment_status=='pending')
+                          <span class="badge badge-warning">En attente</span>
+                        @elseif($order->payment_status=='unpaid')
+                          <span class="badge badge-danger">Non payé</span>
                         @endif
                     </td>
                     <td>

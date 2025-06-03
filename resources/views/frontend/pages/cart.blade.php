@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','ElectroJardin')
+@section('title','Panier')
 @section('main-content')
 	<!-- Fil d'Ariane -->
 	<div class="breadcrumbs">

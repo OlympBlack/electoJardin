@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','ElectroJardin')
+@section('title','Produits')
 
 @section('main-content')
 	

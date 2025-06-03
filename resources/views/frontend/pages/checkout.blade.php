@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','Checkout page')
+@section('title','Caisse')
 
 @section('main-content')
 
@@ -28,9 +28,9 @@
                     @csrf
                     <div class="row"> 
 
-                        <div class="col-lg-6 col-12">
+                        <div class="col-lg-8 col-12">
                             <div class="checkout-form">
-                                <h2>Faites votre paiement ic</h2>
+                                <h2>Faites votre paiement ici</h2>
                                 <p>Veuillez vous incrire afin de passer à la caisse plus rapidement</p>
                                 <!-- Form -->
                                 <div class="row">
@@ -352,9 +352,9 @@
                                     </div>
                                     
                                 </div>
-                                <!--/ End Form 
+                                <!--/ End Form-->
                             </div>
-                        </div>-->
+                        </div>
                         <div class="col-lg-4 col-12">
                             <div class="order-details">
                                 <!-- Order Widget -->
@@ -404,9 +404,9 @@
                                             <form-group>
                                                 <input name="payment_method" type="hidden" checked value="bank_transfer"> 
                                                 <label>Virement bancaire</label>
-                                                <div class="alert alert-info mt-3">
+                                                <!--<div class="alert alert-success mt-3">
                                                     Le paiement se fera par <strong>virement bancaire</strong>. Les coordonnées vous seront fournies après la validation de la commande.
-                                                </div>
+                                                </div>-->
                                             </form-group>
                                             
                                         </div>

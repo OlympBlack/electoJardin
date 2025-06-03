@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Marque de la barre latérale -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('user')}}">
