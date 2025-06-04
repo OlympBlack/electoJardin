@@ -213,11 +213,11 @@
 
 
                         </div>
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="col-md-12 justify-content-center d-flex">
                                 {{$products->appends($_GET)->links()}}
                             </div>
-                          </div>
+                          </div>-->
 
                     </div>
                 </div>
@@ -503,58 +503,7 @@
 
 
    
-         /*
-       $('#order-dataTable').DataTable({
-            "columnDefs": [
-            {
-                "orderable": false,
-                "targets": [8]
-            }
-            ],
-            "language": {
-            "paginate": {
-                "previous": "Précédent",
-                "next": "Suivant"
-            },
-            "lengthMenu": "Afficher _MENU_ entrées",
-            "zeroRecords": "Aucun enregistrement trouvé",
-            "info": "Affichage de _START_ à _END_ sur _TOTAL_ entrées",
-            "infoEmpty": "Aucune donnée disponible",
-            "infoFiltered": "(filtré depuis _MAX_ entrées totales)"
-            }
-        });
-        
-
-        <!-- Script de suppression avec confirmation -->
-        <script>
-            $(document).ready(function(){
-                $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-                });
-
-                $('.dltBtn').click(function(e){
-                var form = $(this).closest('form');
-                var dataID = $(this).data('id');
-                e.preventDefault();
-                swal({
-                    title: "Êtes-vous sûr ?",
-                    text: "Une fois supprimé, vous ne pourrez pas récupérer cette donnée !",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                    form.submit();
-                    } else {
-                    swal("Votre donnée est en sécurité !");
-                    }
-                });
-                });
-            });
-        
+    
 
     </script>
 @endpush

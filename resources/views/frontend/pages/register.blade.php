@@ -35,7 +35,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Nom<span>*</span></label>
-                                        <input type="text" name="name" placeholder="" required="required" value="{{old('name')}}">
+                                        <input type="text" name="name" required="required" value="{{old('name')}}">
                                         @error('name')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -44,7 +44,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Email<span>*</span></label>
-                                        <input type="text" name="email" placeholder="" required="required" value="{{old('email')}}">
+                                        <input type="text" name="email" required="required" value="{{old('email')}}">
                                         @error('email')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -53,7 +53,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Mot de passe<span>*</span></label>
-                                        <input type="password" name="password" placeholder="" required="required" value="{{old('password')}}">
+                                        <input type="password" name="password" required="required" value="{{old('password')}}">
                                         @error('password')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -62,20 +62,21 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Confirmer le mot de passe<span>*</span></label>
-                                        <input type="password" name="password_confirmation" placeholder="" required="required" value="{{old('password_confirmation')}}">
+                                        <input type="password" name="password_confirmation" required="required" value="{{old('password_confirmation')}}">
                                         @error('password_confirmation')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-group login-btn">
+                                    <div class="form-group login-btn d-flex justify-content-center gap-3 flex-wrap">
                                         <button class="btn" type="submit">S'inscrire</button>
                                         <a href="{{route('login.form')}}" class="btn">Se connecter</a>
-                                       <!-- ou
+                                        <!-- ou
                                         <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook"><i class="ti-facebook"></i></a>
                                         <a href="{{route('login.redirect','github')}}" class="btn btn-github"><i class="ti-github"></i></a>
-                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google"><i class="ti-google"></i></a>-->
+                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google"><i class="ti-google"></i></a>
+                                        -->
                                     </div>
                                 </div>
                             </div>
@@ -91,28 +92,41 @@
 
 @push('styles')
 <style>
-    .shop.login .form .btn{
-        margin-right:0;
+    .shop.login .form .btn {
+        margin: 0 10px;
     }
-    .btn-facebook{
-        background:#39579A;
+
+    .btn-facebook {
+        background: #39579A;
     }
-    .btn-facebook:hover{
-        background:#073088 !important;
+
+    .btn-facebook:hover {
+        background: #073088 !important;
     }
-    .btn-github{
-        background:#444444;
-        color:white;
+
+    .btn-github {
+        background: #444444;
+        color: white;
     }
-    .btn-github:hover{
-        background:black !important;
+
+    .btn-github:hover {
+        background: black !important;
     }
-    .btn-google{
-        background:#ea4335;
-        color:white;
+
+    .btn-google {
+        background: #ea4335;
+        color: white;
     }
-    .btn-google:hover{
-        background:rgb(243, 26, 26) !important;
+
+    .btn-google:hover {
+        background: rgb(243, 26, 26) !important;
+    }
+
+    .login-btn {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
 </style>
 @endpush

@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	<!-- End Preloader -->
-	
+		
 	@include('frontend.layouts.notification')
 	<!-- Header -->
 	@include('frontend.layouts.header')

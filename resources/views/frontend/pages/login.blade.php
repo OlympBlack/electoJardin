@@ -19,7 +19,7 @@
         </div>
     </div>
     <!-- Fin Fil d'Ariane -->
-            
+
     <!-- Connexion boutique -->
     <section class="shop login section">
         <div class="container">
@@ -50,22 +50,23 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-12">
-                                    <div class="form-group login-btn">
+                                    <div class="form-group login-btn d-flex justify-content-center gap-3 flex-wrap">
                                         <button class="btn" type="submit">Se connecter</button>
                                         <a href="{{route('register.form')}}" class="btn">S'inscrire</a>
-                                       <!-- ou
-                                        <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook"><i class="ti-facebook"></i></a>
-                                        <a href="{{route('login.redirect','github')}}" class="btn btn-github"><i class="ti-github"></i></a>
-                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google"><i class="ti-google"></i></a>-->
                                     </div>  
-                                    <div class="checkbox">
-                                        <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Se souvenir de moi</label>
+                                    
+                                    <div class="checkbox text-center mt-2">
+                                        <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Se souvenir de moi</label>
                                     </div>
+
                                     @if (Route::has('password.request'))
-                                        <a class="lost-pass" href="{{ route('password.request') }}">
-                                            Mot de passe oublié ?
-                                        </a>
+                                        <div class="text-center mt-2">
+                                            <a class="lost-pass" href="{{ route('password.request') }}">
+                                                Mot de passe oublié ?
+                                            </a>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -78,30 +79,44 @@
     </section>
     <!--/ Fin Connexion -->
 @endsection
+
 @push('styles')
 <style>
-    .shop.login .form .btn{
-        margin-left: 3%;
+    .shop.login .form .btn {
+        margin: 0 10px;
     }
-    .btn-facebook{
-        background:#39579A;
+
+    .btn-facebook {
+        background: #39579A;
     }
-    .btn-facebook:hover{
-        background:#073088 !important;
+
+    .btn-facebook:hover {
+        background: #073088 !important;
     }
-    .btn-github{
-        background:#444444;
-        color:white;
+
+    .btn-github {
+        background: #444444;
+        color: white;
     }
-    .btn-github:hover{
-        background:black !important;
+
+    .btn-github:hover {
+        background: black !important;
     }
-    .btn-google{
-        background:#ea4335;
-        color:white;
+
+    .btn-google {
+        background: #ea4335;
+        color: white;
     }
-    .btn-google:hover{
-        background:rgb(243, 26, 26) !important;
+
+    .btn-google:hover {
+        background: rgb(243, 26, 26) !important;
+    }
+
+    .login-btn {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
 </style>
 @endpush
