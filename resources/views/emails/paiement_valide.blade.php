@@ -13,7 +13,7 @@
 
     <ul>
         <li><strong>Montant payé :</strong> {{ number_format($order->total_amount, 2, ',', ' ') }} €</li>
-        <li><strong>Statut :</strong> Paiement validé</li>
+        <li><strong>Statut :</strong> <span style="color: green;">Paiement validé</span></li>
     </ul>
 
     <p>Votre commande est désormais en cours de traitement et sera expédiée sous peu.</p>

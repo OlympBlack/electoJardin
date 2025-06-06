@@ -20,7 +20,7 @@
     <h3>Instructions pour le virement bancaire</h3>
     <ul>
         <li><strong>Bénéficiaire :</strong> Electro Jardin</li>
-        <li><strong>Banque :</strong> Banque Populaire</li>
+        <!--<li><strong>Banque :</strong> Banque Populaire</li>-->
         <li><strong>IBAN :</strong> FR76 1234 5678 9012 3456 7890 123</li>
         <li><strong>BIC / SWIFT :</strong> BPCEFRPPXXX</li>
         <li><strong>Référence à indiquer :</strong> {{ $order->order_number }}</li>

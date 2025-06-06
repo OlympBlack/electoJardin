@@ -2,71 +2,79 @@
 @section('title','ElectroJardin')
 @section('main-content')
 <!-- Slider Area -->
-@if(count($banners)>0)
-    <section id="Gslider" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            @foreach($banners as $key=>$banner)
-        <li data-target="#Gslider" data-slide-to="{{$key}}" class="{{(($key==0)? 'active' : '')}}"></li>
-            @endforeach
 
-        </ol>
-        <div class="carousel-inner" role="listbox">
-                @foreach($banners as $key=>$banner)
-                <div class="carousel-item {{(($key==0)? 'active' : '')}}">
-                    <img class="first-slide" src="{{$banner->photo}}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block text-left">
-                        <h1 class="wow fadeInDown">{{$banner->title}}</h1>
-                        <p>{!! html_entity_decode($banner->description) !!}</p>
-                        <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('product-grids')}}" role="button">Achéter maintenant<i class="far fa-arrow-alt-circle-right"></i></i></a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <a class="carousel-control-prev" href="#Gslider" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#Gslider" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-        </a>
-    </section>
-@endif
+<style>
+  #electroJardinCarousel {
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #electroJardinCarousel .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+  }
+
+  #electroJardinCarousel .carousel-control-prev,
+  #electroJardinCarousel .carousel-control-next {
+    width: 5%;
+  }
+
+  #electroJardinCarousel .carousel-control-prev-icon,
+  #electroJardinCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 50%;
+  }
+</style>
+<!-- Carousel Electro Jardin -->
+<div id="electroJardinCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="https://images.ctfassets.net/b85ozb2q358o/b226b8df299b8c53dfba2e697d37ea5c9ac1439e2b0c08ea85ac42c9b3f3da26/bb48f8fcbad118e88af73538fa05eec4/image.png" class="d-block w-100" alt="Machine agricole">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+       <h5>Tondeuse Autoportée Puissante</h5>
+        <p>Tondez de grandes surfaces rapidement et sans effort grâce à nos modèles robustes.</p>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="https://guide-prix.com/wp-content/uploads/2021/12/tronconneuse.jpg" class="d-block w-100" alt="Matériel de jardin">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h5>Tronçonneuses Puissantes</h5>
+        <p>Coupez facilement bois et branches avec nos tronçonneuses robustes et performantes.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="https://im.qccdn.fr/node/guide-d-achat-tondeuse-robot-25188/thumbnail_1000x600px-146200.jpg" class="d-block w-100" alt="Robot tondeuse">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+        <h5>Robot Tondeuse Intelligent</h5>
+        <p>Des pelouses parfaites sans effort. Découvrez nos robots nouvelle génération.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contrôles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#electroJardinCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#electroJardinCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"></span>
+  </button>
+</div>
+
 
 <!--/ End Slider Area -->
 
-<!-- Start Small Banner  -->
-<section class="small-banner section">
-    <div class="container-fluid">
-        <div class="row">
-            @php
-            $category_lists=DB::table('categories')->where('status','active')->limit(3)->get();
-            @endphp
-            @if($category_lists)
-                @foreach($category_lists as $cat)
-                    @if($cat->is_parent==1)
-                        <!-- Single Banner  -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-banner">
-                                @if($cat->photo)
-                                    <img src="{{$cat->photo}}" alt="{{$cat->photo}}">
-                                @else
-                                    <img src="https://via.placeholder.com/600x370" alt="#">
-                                @endif
-                                <!--<div class="content">
-                                    <h3>{{$cat->title}}</h3>
-                                        <a href="{{route('product-cat',$cat->slug)}}">Découvrir maintenant</a>
-                                </div>-->
-                            </div>
-                        </div>
-                    @endif
-                    <!-- /End Single Banner  -->
-                @endforeach
-            @endif
-        </div>
-    </div>
-</section>
-<!-- End Small Banner -->
+
 
 <!-- Start Product Area -->
 <div class="product-area section">
@@ -502,9 +510,9 @@
                                                 <a href="{{route('add-to-wishlist',$product->slug)}}" class="btn min"><i class="ti-heart"></i></a>
                                             </div>
                                         </form>
-                                        <div class="default-social">
-                                        <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-                                        </div>
+                                        <!-- ShareThis BEGIN<div class="default-social">
+                                         <div class="sharethis-inline-share-buttons"></div> 
+                                        </div>ShareThis END -->
                                     </div>
                                 </div>
                             </div>

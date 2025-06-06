@@ -91,7 +91,7 @@
                     <div class="text-start bg-light rounded p-4 mb-4">
                         <ul class="list-unstyled mb-0">
                             <li><strong>👤 Bénéficiaire :</strong> Electro Jardin</li>
-                            <li><strong>🏦 Banque :</strong> Banque Populaire</li>
+                            <!--<li><strong>🏦 Banque :</strong> Banque Populaire</li>-->
                             <li><strong>💳 IBAN :</strong> <code>FR7617238000010026836080386</code></li>
                             <li><strong>🔁 BIC / SWIFT :</strong> SCSYFRP2</li>
                         </ul>
