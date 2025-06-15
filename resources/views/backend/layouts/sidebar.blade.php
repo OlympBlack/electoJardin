@@ -1,11 +1,12 @@
-<ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-success text-dark sidebar sidebar-
+ accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin')}}">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
       </div>
-      <div class="sidebar-brand-text mx-3">Admin</div>
+      <div class="sidebar-brand-text mx-3 text-dark" >Admin</div>
     </a>
 
     <!-- Divider -->
@@ -226,3 +227,28 @@
     </div>
 
 </ul>
+<style>
+    /* Pour tous les textes et icônes de la sidebar */
+    .sidebar {
+        color: #000 !important; /* texte noir */
+        font-size: 16px; /* taille de texte augmentée */
+    }
+
+    .sidebar a,
+    .sidebar .nav-link,
+    .sidebar .collapse-item,
+    .sidebar .sidebar-brand-text,
+    .sidebar .sidebar-heading {
+        color: #000 !important; /* texte noir pour tous les liens et titres */
+        font-size: 16px; /* taille du texte */
+    }
+
+    .sidebar i {
+        color: #000 !important; /* icônes noires */
+        font-size: 18px; /* taille des icônes légèrement augmentée */
+    }
+
+    .sidebar .collapse-inner a {
+        font-size: 15px;
+    }
+</style>
