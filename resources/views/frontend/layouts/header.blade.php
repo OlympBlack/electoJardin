@@ -1,6 +1,6 @@
 <header class="header shop">
     <!-- Barre supérieure -->
-    <div class="topbar">
+    <div class="topbar bg-success">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
@@ -177,8 +177,8 @@
     </div>
 
     <!-- Partie intérieure du header -->
-    <div class="header-inner">
-        <div class="container">
+    <div class="header-inner bg-success">
+        <div class="container-build text-center">
             <div class="cat-nav-head">
                 <div class="row">
                     <div class="col-lg-12 col-12">
@@ -190,7 +190,12 @@
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Accueil</a></li>
                                             <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Produits</a><span class="new">Nouveauté</span></li>                                                    
-                                            {{Helper::getHeaderCategory()}}
+                                            @foreach(Helper::getAllCategory() as $cat)
+                                                <li class="{{ Request::is('category/'.$cat->slug.'*') ? 'active' : '' }}">
+                                                    <a href="{{ route('product-cat', $cat->slug) }}">{{ $cat->title }}</a>
+                                                </li>
+                                            @endforeach
+
                                             <!--<li class="{{Request::path()=='blog' ? 'active' : ''}}"><a href="{{route('blog')}}">Blog</a></li> -->                                   
                                             <!--<li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">Qui sommes-nous</a></li>-->
                                             <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact</a></li>
@@ -207,3 +212,27 @@
     </div>
     <!--/ Fin partie intérieure du header -->
 </header>
+<style>
+    .navbar-nav {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    width: 100%;
+}
+
+.menu-area {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        justify-content: center !important;
+    }
+}
+
+.topbar .list-main li,
+.topbar .list-main li a {
+    color: white !important;
+}
+
+</style>

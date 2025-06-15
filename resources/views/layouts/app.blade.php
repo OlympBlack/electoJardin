@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!--favicon-->
+    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
+
 </head>
 <body>
     <div id="app">
@@ -60,7 +64,6 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Déconnexion') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

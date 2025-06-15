@@ -21,14 +21,10 @@
     </section>
 
     <section class="mb-5">
-        <h3>2. Modes de paiement</h3>
-        <p>Nous acceptons plusieurs moyens de paiement sécurisés :</p>
-        <ul>
-            <li>Carte bancaire (Visa, MasterCard...)</li>
-            <li>Virement bancaire</li>
-            <li>Paiement à la livraison (dans certaines zones)</li>
-        </ul>
+    <h3>2. Modes de paiement</h3>
+    <p>Actuellement, nous acceptons uniquement le virement bancaire comme moyen de paiement sécurisé :</p>
     </section>
+
 
     <section class="mb-5">
         <h3>3. Suivi de commande</h3>
