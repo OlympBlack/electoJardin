@@ -1,6 +1,6 @@
 <header class="header shop">
     <!-- Barre supérieure -->
-    <div class="topbar bg-success">
+    <div class="topbar bg-success bg-opacity-50 text-white p-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
