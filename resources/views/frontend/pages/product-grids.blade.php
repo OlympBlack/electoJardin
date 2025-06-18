@@ -227,6 +227,7 @@
 
     <!--/ End Product Style 1  -->
 
+@include('frontend.layouts.newsletter')
 
 
     <!-- Modal -->
