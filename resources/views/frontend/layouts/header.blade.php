@@ -138,7 +138,7 @@
                         </div>
 
                         <div class="sinlge-bar shopping">
-                            <a href="{{route('cart')}}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{Helper::cartCount()}}</span></a>
+                            <a href="{{route('cart')}}" class="single-icon"><i class="fa fa-shopping-cart"></i> <span class="total-count">{{Helper::cartCount()}}</span></a>
                             <!-- Élément du panier -->
                             @auth
                                 <div class="shopping-item">
@@ -187,19 +187,52 @@
                             <nav class="navbar navbar-expand-lg">
                                 <div class="navbar-collapse">    
                                     <div class="nav-inner">    
-                                        <ul class="nav main-menu menu navbar-nav">
-                                            <li class="{{Request::path()=='home' ? 'active' : ''}}"><a href="{{route('home')}}">Accueil</a></li>
-                                            <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Produits</a><span class="new">Nouveauté</span></li>                                                    
-                                            @foreach(Helper::getAllCategory() as $cat)
-                                                <li class="{{ Request::is('category/'.$cat->slug.'*') ? 'active' : '' }}">
-                                                    <a href="{{ route('product-cat', $cat->slug) }}">{{ $cat->title }}</a>
-                                                </li>
-                                            @endforeach
+                                       <ul class="nav main-menu menu navbar-nav">
 
-                                            <!--<li class="{{Request::path()=='blog' ? 'active' : ''}}"><a href="{{route('blog')}}">Blog</a></li> -->                                   
-                                            <!--<li class="{{Request::path()=='about-us' ? 'active' : ''}}"><a href="{{route('about-us')}}">Qui sommes-nous</a></li>-->
-                                            <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact</a></li>
+                                            <!-- Accueil -->
+                                            <li class="{{ Request::is('home') ? 'active' : '' }}">
+                                                <a href="{{ route('home') }}">Accueil</a>
+                                            </li>
+
+                                            <!-- Produits -->
+                                            <li class="{{ Request::is('product-grids') || Request::is('product-lists') ? 'active' : '' }}">
+                                                <a href="{{ route('product-grids') }}">Produits</a>
+                                                <span class="new">Nouveauté</span>
+                                            </li>
+
+                                            <!-- Tondeuses (Dropdown) -->
+                                            <li class="dropdown {{ Request::is('category/robots-tondeuses*') || Request::is('category/tondeuses-autoportees*') || Request::is('category/tondeuses-thermiques*') ? 'active' : '' }}" >
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tondeuses <span class="caret"></span></a>
+                                                <ul class="dropdown-menu" style="min-width: 250px;  white-space: nowrap;">
+                                                    <li class="{{ Request::is('category/robots-tondeuses*') ? 'active' : '' }}">
+                                                        <a href="{{ route('product-cat', 'robots-tondeuses') }}">Robots tondeuses</a>
+                                                    </li>
+                                                    <li class="{{ Request::is('category/tondeuses-autoportees*') ? 'active' : '' }}">
+                                                        <a href="{{ route('product-cat', 'tondeuses-autoportees') }}">Tondeuses autoportées</a>
+                                                    </li>
+                                                    <li class="{{ Request::is('category/tondeuses-thermiques*') ? 'active' : '' }}">
+                                                        <a href="{{ route('product-cat', 'tondeuses-thermiques') }}">Tondeuses thermiques</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <!-- Tronçonneuses -->
+                                            <li class="{{ Request::is('category/tronconneuses*') ? 'active' : '' }}">
+                                                <a href="{{ route('product-cat', 'tronconneuses') }}">Tronçonneuses</a>
+                                            </li>
+
+                                            <!-- Débroussailleuses -->
+                                            <li class="{{ Request::is('category/debroussailleuses*') ? 'active' : '' }}">
+                                                <a href="{{ route('product-cat', 'debroussailleuses') }}">Débroussailleuses</a>
+                                            </li>
+
+                                            <!-- Contact -->
+                                            <li class="{{ Request::is('contact') ? 'active' : '' }}">
+                                                <a href="{{ route('contact') }}">Contact</a>
+                                            </li>
+
                                         </ul>
+
                                     </div>
                                 </div>
                             </nav>
