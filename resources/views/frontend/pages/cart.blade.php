@@ -25,7 +25,7 @@
 				<div class="col-12">
 					<!-- Récapitulatif du panier -->
 					<table class="table shopping-summery">
-						<thead>
+						<thead style="background-color: rgb(56, 60, 67);>
 							<tr class="main-hading">
 								<th>PRODUIT</th>
 								<th>NOM</th>
@@ -75,7 +75,7 @@
 									@endforeach
 									<tr>
 										<td colspan="6" class="text-right">
-											<button class="btn float-right" type="submit">Mettre à jour</button>
+											<button class="btn float-right" type="submit" style="background-color: rgb(56, 60, 67);">Mettre à jour</button>
 										</td>
 									</tr>
 								@else
@@ -115,8 +115,8 @@
 										<li class="last" id="order_total_price">Vous payez <span>${{number_format($total_amount,2)}}</span></li>
 									</ul>
 									<div class="button5">
-										<a href="{{route('checkout')}}" class="btn">Passer à la caisse</a>
-										<a href="{{route('product-grids')}}" class="btn">Continuer mes achats</a>
+										<a href="{{route('checkout')}}" class="btn" style="background-color: rgb(56, 60, 67);">Passer à la caisse</a>
+										<a href="{{route('product-grids')}}" class="btn" style="background-color: rgb(56, 60, 67);">Continuer mes achats</a>
 									</div>
 								</div>
 							</div>

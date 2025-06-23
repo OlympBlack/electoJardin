@@ -1,6 +1,6 @@
 <header class="header shop">
     <!-- Barre supérieure -->
-    <div class="topbar bg-success">
+    <div class="topbar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
@@ -56,7 +56,6 @@
 
                     <!-- Formulaire de recherche -->
                     <div class="search-top">
-                        <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
                         <div class="search-top">
                             <form class="search-form">
                                 <input type="text" placeholder="Rechercher un produit ici..." name="search">
@@ -177,7 +176,7 @@
     </div>
 
     <!-- Partie intérieure du header -->
-    <div class="header-inner bg-success">
+    <div class="header-inner">
         <div class="container-build text-center">
             <div class="cat-nav-head">
                 <div class="row">
@@ -246,6 +245,15 @@
     <!--/ Fin partie intérieure du header -->
 </header>
 <style>
+    .topbar, .header-inner{
+        background-color: rgb(18, 96, 18) !important;
+
+    }
+    .header-inner,
+    .header-inner a,
+    .header-inner .nav > li > a {
+        color: white !important;
+    }
     .navbar-nav {
     display: flex;
     justify-content: center; /* centre horizontalement */
@@ -267,5 +275,36 @@
 .topbar .list-main li a {
     color: white !important;
 }
+
+
+/* Style du champ de recherche (les deux types) */
+.search-form input[type="text"],
+.search-bar input[type="search"],
+.search-top {
+    border: 1px solid rgb(56, 60, 67) !important;
+    padding: 8px 10px !important;
+    border-radius: 4px !important;
+    outline: none !important;
+    color: #333 !important;
+}
+
+/* Style du bouton de recherche */
+.search-form button,
+.search-bar button {
+    background-color: rgb(56, 60, 67) !important;
+    color: white !important;
+    border: none !important;
+    
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    text-align: center;
+}
+
+/* Effet hover */
+.search-form button:hover,
+.search-bar button:hover {
+    background-color: rgb(255, 176, 4) !important;
+}
+
 
 </style>

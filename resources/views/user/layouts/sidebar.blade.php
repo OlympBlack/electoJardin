@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: rgb(18, 96, 18)">
 
   <!-- Marque de la barre latérale -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('user')}}">
@@ -73,12 +73,12 @@
   #accordionSidebar .collapse-item,
   #accordionSidebar .sidebar-brand-text,
   #accordionSidebar .sidebar-heading {
-    color: #000 !important;
-    font-size: 16px;
+    color: white !important;
+    font-size: 14px;
   }
 
   #accordionSidebar i {
-    color: #000 !important;
-    font-size: 18px;
+    color: white !important;
+    font-size: 16px;
   }
 </style>

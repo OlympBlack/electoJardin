@@ -104,6 +104,9 @@
 			</div>
 	</section>
 	<!--/ Fin Contact -->
+
+@include('frontend.layouts.newsletter')
+
 	
 	<!-- Section Carte -->
 	<!--<div class="map-section">

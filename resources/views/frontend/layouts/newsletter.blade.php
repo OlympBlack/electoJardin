@@ -8,7 +8,7 @@
                     <div class="inner text-white">
                         <h1>Newsletter</h1>
                         <p style="font-size: 20px; color: white">Soyez les premiers à profiter de nos offres exclusives</p>
-                        <form action="{{route('subscribe')}}" method="post" class="newsletter-inner">
+                        <form action="{{route('newsletter.store')}}" method="POST" class="newsletter-inner">
                             @csrf
                             <input name="email" placeholder="Votre adresse email" required="" type="email">
                             <button class="btn" type="submit">S'abonner</button>

@@ -53,8 +53,8 @@
 
                                 <div class="col-12">
                                     <div class="form-group login-btn d-flex justify-content-center gap-3 flex-wrap">
-                                        <button class="btn" type="submit">Se connecter</button>
-                                        <a href="{{route('register.form')}}" class="btn">S'inscrire</a>
+                                        <button class="btn" type="submit" style="background-color: rgb(56, 60, 67);">Se connecter</button>
+                                        <a href="{{route('register.form')}}" class="btn" style="background-color: rgb(56, 60, 67);">S'inscrire</a>
                                     </div>  
                                     
                                     <div class="checkbox text-center mt-2">
@@ -63,7 +63,7 @@
 
                                     @if (Route::has('password.request'))
                                         <div class="text-center mt-2">
-                                            <a class="lost-pass" href="{{ route('password.request') }}">
+                                            <a class="lost-pass" href="">
                                                 Mot de passe oublié ?
                                             </a>
                                         </div>

@@ -1,6 +1,6 @@
 
 	<!-- Start Footer Area -->
-<footer class="footer" style="background-color: rgb(2, 46, 2);">
+<footer class="footer text-dark" style="background-color: rgb(56, 60, 67);">
 	<!-- Partie haute du pied de page -->
 	<div class="footer-top section">
 		<div class="container">
@@ -9,7 +9,7 @@
 					<!-- Widget unique -->
 					<div class="single-footer about">
 						<div class="logo">
-							<a href="index.html"><img src="{{asset('backend/img/logo2.jpg')}}" alt="logo" style="height: 70px;"></a>
+							<a href="index.html"><img src="{{asset('backend/img/logo2.png')}}" alt="logo" style="height: 70px;"></a>
 						</div>
 						@php
 							$settings=DB::table('settings')->get();
@@ -87,6 +87,8 @@
 		</div>
 	</div>
 </footer>
+
+
 
 	<!-- /End Footer Area -->
  

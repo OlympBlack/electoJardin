@@ -1,5 +1,4 @@
-<ul class="navbar-nav bg-success text-dark sidebar sidebar-
- accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-accordion" id="accordionSidebar" style="background-color: rgb(18, 96, 18);">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin')}}">
@@ -207,12 +206,20 @@
           <span>Coupons</span></a>
     </li>-->
 
+     <!-- newsletter -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('newsletter.index')}}">
+            <i class="fas fa-users"></i>
+            <span>Abonnées</span></a>
+    </li>
+    
     <!-- Users -->
     <li class="nav-item">
         <a class="nav-link" href="{{route('users.index')}}">
             <i class="fas fa-users"></i>
             <span>Utilisateurs</span></a>
     </li>
+
 
     <!-- Settings -->
     <li class="nav-item">
@@ -230,8 +237,8 @@
 <style>
     /* Pour tous les textes et icônes de la sidebar */
     .sidebar {
-        color: #000 !important; /* texte noir */
-        font-size: 16px; /* taille de texte augmentée */
+        color: white !important; 
+        font-size: 14px; 
     }
 
     .sidebar a,
@@ -239,16 +246,16 @@
     .sidebar .collapse-item,
     .sidebar .sidebar-brand-text,
     .sidebar .sidebar-heading {
-        color: #000 !important; /* texte noir pour tous les liens et titres */
-        font-size: 16px; /* taille du texte */
+        color: white !important; 
+        font-size: 14px; 
     }
 
     .sidebar i {
-        color: #000 !important; /* icônes noires */
-        font-size: 18px; /* taille des icônes légèrement augmentée */
+        color: white !important; 
+        font-size: 16px; 
     }
 
     .sidebar .collapse-inner a {
-        font-size: 15px;
+        font-size: 13px;
     }
 </style>

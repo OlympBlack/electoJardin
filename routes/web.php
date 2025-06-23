@@ -20,6 +20,7 @@
     use App\Http\Controllers\Auth\ResetPasswordController;
     use App\Http\Controllers\ConditionController;
     use App\Http\Controllers\StripeController;
+    use App\Http\Controllers\newsletterController;
 
 
     /*
@@ -114,7 +115,8 @@
     Route::get('blog-tag/{slug}', [FrontendController::class, 'blogByTag'])->name('blog.tag');
 
 // NewsLetter
-    Route::post('/subscribe', [FrontendController::class, 'subscribe'])->name('subscribe');
+    Route::resource('newsletter', 'newsletterController');
+   
 
 // Product Review
     Route::resource('/review', 'ProductReviewController');

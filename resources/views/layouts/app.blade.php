@@ -22,6 +22,10 @@
     <!--favicon-->
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
 
+    <!--favicon-->
+    <link rel="stylesheet" href="{{ asset('css/confirmation.css') }}">
+
+
 </head>
 <body>
     <div id="app">

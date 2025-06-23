@@ -12,7 +12,7 @@
             <div class="label">Panier</div>
         </div>
         <div class="step-line"></div>
-        <div class="step-item active confirmation">
+        <div class="step-item active">
             <div class="circle">2</div>
             <div class="label">Confirmation</div>
         </div>
